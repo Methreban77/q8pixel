@@ -89,3 +89,43 @@ const initial = saved || browserLang;
 if (initial === "ar") setLanguage("ar");
 
 document.getElementById("year").textContent = new Date().getFullYear();
+
+// Scroll reveals: sections fade up as they enter the screen, siblings staggered.
+const revealTargets = document.querySelectorAll(
+  ".section h2, .section-note, .card, .work-card, .steps li, .contact-inner > *"
+);
+
+if ("IntersectionObserver" in window) {
+  revealTargets.forEach((el) => {
+    el.dataset.reveal = "";
+    const siblings = [...el.parentElement.children].filter((c) => c.matches(el.tagName));
+    el.style.setProperty("--d", Math.max(0, siblings.indexOf(el)));
+  });
+
+  const revealer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      const el = entry.target;
+      el.classList.add("is-in");
+      if (el.classList.contains("work-card")) el.classList.add("built");
+      revealer.unobserve(el);
+      // Hand control back to each element's own hover transitions once revealed.
+      setTimeout(() => {
+        el.removeAttribute("data-reveal");
+        el.style.removeProperty("--d");
+      }, 1400);
+    });
+  }, { threshold: 0.15, rootMargin: "0px 0px -40px 0px" });
+
+  revealTargets.forEach((el) => revealer.observe(el));
+
+  // Pause the hero show reel while it is off screen.
+  const stage = document.getElementById("stage");
+  if (stage) {
+    new IntersectionObserver(([entry]) => {
+      stage.classList.toggle("paused", !entry.isIntersecting);
+    }).observe(stage);
+  }
+} else {
+  document.documentElement.classList.remove("js");
+}

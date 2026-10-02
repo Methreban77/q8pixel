@@ -20,6 +20,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;600;700&family=Inter:wght@400;600;800&family=Plus+Jakarta+Sans:wght@500;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <script>document.documentElement.classList.add("js");</script>
 </head>
 <body>
   <header class="site-header">
@@ -43,13 +44,73 @@
 
   <main id="top">
     <section class="hero">
-      <div class="container hero-inner">
-        <p class="eyebrow" data-i18n="hero.eyebrow">Web &amp; app studio in Kuwait</p>
-        <h1 data-i18n="hero.title">We build websites and apps that grow your business</h1>
-        <p class="lead" data-i18n="hero.text">From your first website to a full mobile app and reliable hosting — Q8Pixel handles it from start to finish.</p>
-        <div class="actions">
-          <a class="btn btn-primary" href="https://wa.me/96590958080" target="_blank" rel="noopener" data-i18n="hero.cta">Chat on WhatsApp</a>
-          <a class="btn btn-ghost" href="tel:+96590958080"><span data-i18n="hero.call">Call</span> <bdi dir="ltr">9095 8080</bdi></a>
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow intro" style="--d:0" data-i18n="hero.eyebrow">Web &amp; app studio in Kuwait</p>
+          <h1 class="intro" style="--d:1" data-i18n="hero.title">We build websites and apps that grow your business</h1>
+          <p class="lead intro" style="--d:2" data-i18n="hero.text">From your first website to a full mobile app and reliable hosting — Q8Pixel handles it from start to finish.</p>
+          <div class="actions intro" style="--d:3">
+            <a class="btn btn-primary" href="https://wa.me/96590958080" target="_blank" rel="noopener" data-i18n="hero.cta">Chat on WhatsApp</a>
+            <a class="btn btn-ghost" href="tel:+96590958080"><span data-i18n="hero.call">Call</span> <bdi dir="ltr">9095 8080</bdi></a>
+          </div>
+        </div>
+
+        <!-- Show reel: the logo draws itself, then a website and an app assemble on screen -->
+        <div class="stage" id="stage" aria-hidden="true">
+          <div class="stage-inner">
+            <div class="stage-glow"></div>
+
+            <svg class="big-mark" viewBox="0 0 512 512">
+              <defs>
+                <clipPath id="ring-clip">
+                  <path d="M434 320.28 A220.19 220.19 0 1 0 320.28 434 L289.82 368.01 A147.53 147.53 0 1 1 368.01 289.82Z"/>
+                </clipPath>
+              </defs>
+              <!-- the clip sits on a wrapper so the rotation only moves where the stroke starts -->
+              <g clip-path="url(#ring-clip)">
+                <circle class="ring-draw" cx="232.19" cy="232.19" r="183.86" pathLength="100"
+                        transform="rotate(66 232.19 232.19)"/>
+              </g>
+              <g class="spire">
+                <path fill="#2f6bff" d="M263.33 263.33 L425.26 338.07 L500 500 L338.07 425.26 Z"/>
+                <path fill="#19d3c5" d="M263.33 263.33 L425.26 338.07 L500 500 Z"/>
+              </g>
+            </svg>
+
+            <div class="win">
+              <div class="win-bar"><i></i><i></i><i></i><span class="win-url"></span></div>
+              <div class="win-body">
+                <div class="w-nav build" style="--i:0"><span class="w-logo"></span><span></span><span></span><span></span></div>
+                <div class="w-hero build" style="--i:1">
+                  <span class="w-title"></span>
+                  <span class="w-sub"></span>
+                  <span class="w-btn"></span>
+                </div>
+                <div class="w-cards">
+                  <span class="build" style="--i:2"></span>
+                  <span class="build" style="--i:3"></span>
+                  <span class="build" style="--i:4"></span>
+                </div>
+              </div>
+              <svg class="w-cursor" viewBox="0 0 24 24"><path d="M5 2.5 19.5 11l-6.6 1.6L9.6 19Z"/></svg>
+            </div>
+
+            <div class="device">
+              <div class="ph-screen">
+                <span class="ph-notch"></span>
+                <div class="ph-head build" style="--i:1"><span class="ph-line"></span><span class="ph-avatar"></span></div>
+                <div class="ph-card build" style="--i:2"><span></span><span></span></div>
+                <div class="ph-item build" style="--i:3"><span class="ph-ico"></span><span class="ph-lines"><span></span><span></span></span></div>
+                <div class="ph-item build" style="--i:4"><span class="ph-ico"></span><span class="ph-lines"><span></span><span></span></span><span class="ph-toggle"><i></i></span></div>
+                <div class="ph-item build" style="--i:5"><span class="ph-ico"></span><span class="ph-lines"><span></span><span></span></span></div>
+                <div class="ph-tabs"><i></i><i></i><i></i><i></i><b></b></div>
+              </div>
+            </div>
+
+            <span class="spark" style="--x:6;--y:12;--t:0"></span>
+            <span class="spark" style="--x:90;--y:70;--t:1.3"></span>
+            <span class="spark" style="--x:78;--y:88;--t:2.4"></span>
+          </div>
         </div>
       </div>
       <div class="pixels" aria-hidden="true"></div>
