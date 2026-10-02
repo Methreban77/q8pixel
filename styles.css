@@ -238,6 +238,107 @@ h3 { margin: 0 0 8px; font-size: 1.2rem; }
   stroke-linejoin: round;
 }
 
+/* Portfolio */
+.section-note {
+  margin: -24px 0 36px;
+  color: var(--muted);
+}
+
+.work-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.work-body { padding: 22px 24px 26px; }
+.work-body p { margin: 0; color: var(--muted); }
+
+.tag {
+  display: inline-block;
+  margin-bottom: 10px;
+  padding: 2px 10px;
+  border-radius: 999px;
+  background: var(--bg-alt);
+  color: var(--blue);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.preview {
+  aspect-ratio: 16 / 10;
+  display: grid;
+  place-items: center;
+}
+
+.preview-web { background: linear-gradient(135deg, #ffb15a, #ff5f6d); }
+.preview-app { background: linear-gradient(135deg, #7b5cff, #c86bfa); }
+.preview-store { background: linear-gradient(135deg, #16c79a, #0f8f86); }
+
+.mock-browser,
+.mock-phone {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  background: #fff;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.18);
+}
+
+.mock-browser {
+  width: 76%;
+  height: 72%;
+  padding: 22px 12px 12px;
+  border-radius: 8px;
+  position: relative;
+}
+
+.mock-browser::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  inset-inline-start: 10px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ff5f57;
+  box-shadow: 10px 0 #febc2e, 20px 0 #28c840;
+}
+
+html[dir="rtl"] .mock-browser::before { box-shadow: -10px 0 #febc2e, -20px 0 #28c840; }
+
+.mock-phone {
+  width: 30%;
+  height: 86%;
+  padding: 14px 8px;
+  border: 4px solid var(--navy);
+  border-radius: 16px;
+}
+
+.mock-hero { flex: 0 0 34%; border-radius: 5px; background: var(--bg-alt); }
+.mock-line { height: 6px; border-radius: 3px; background: #dfe4ee; }
+.mock-line.short { width: 55%; }
+.mock-slot { height: 14px; border-radius: 4px; background: #efe9ff; }
+
+.mock-row,
+.mock-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+}
+
+.mock-row span,
+.mock-grid span { border-radius: 4px; background: var(--bg-alt); }
+
+.email {
+  margin: -16px 0 28px;
+  font-family: var(--font);
+}
+
+.email a { color: rgba(255, 255, 255, 0.85); }
+
+.site-footer a { color: inherit; }
+
 .steps {
   list-style: none;
   margin: 0;
