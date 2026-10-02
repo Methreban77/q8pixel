@@ -339,6 +339,15 @@ html[dir="rtl"] .mock-browser::before { box-shadow: -10px 0 #febc2e, -20px 0 #28
 
 .site-footer a { color: inherit; }
 
+.ig {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+}
+
 .steps {
   list-style: none;
   margin: 0;
