@@ -1,25 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <!-- Q8Pixel mark: a pixel-font "Q" whose tail is drawn in cyan pixels -->
-  <rect width="32" height="32" rx="8" fill="#13204a"/>
-  <g fill="#e8eeff">
-    <rect x="10.8" y="3.6" width="3.2" height="3.2" rx=".6"/>
-    <rect x="14.4" y="3.6" width="3.2" height="3.2" rx=".6"/>
-    <rect x="18" y="3.6" width="3.2" height="3.2" rx=".6"/>
-    <rect x="7.2" y="7.2" width="3.2" height="3.2" rx=".6"/>
-    <rect x="21.6" y="7.2" width="3.2" height="3.2" rx=".6"/>
-    <rect x="7.2" y="10.8" width="3.2" height="3.2" rx=".6"/>
-    <rect x="21.6" y="10.8" width="3.2" height="3.2" rx=".6"/>
-    <rect x="7.2" y="14.4" width="3.2" height="3.2" rx=".6"/>
-    <rect x="21.6" y="14.4" width="3.2" height="3.2" rx=".6"/>
-    <rect x="7.2" y="18" width="3.2" height="3.2" rx=".6"/>
-    <rect x="21.6" y="18" width="3.2" height="3.2" rx=".6"/>
-    <rect x="7.2" y="21.6" width="3.2" height="3.2" rx=".6"/>
-    <rect x="10.8" y="25.2" width="3.2" height="3.2" rx=".6"/>
-    <rect x="14.4" y="25.2" width="3.2" height="3.2" rx=".6"/>
-  </g>
-  <g fill="#19d3c5">
-    <rect x="14.4" y="18" width="3.2" height="3.2" rx=".6"/>
-    <rect x="18" y="21.6" width="3.2" height="3.2" rx=".6"/>
-    <rect x="21.6" y="25.2" width="3.2" height="3.2" rx=".6"/>
-  </g>
+  <!-- Q8Pixel favicon: small-size cut of the sphere-and-spire Q on a navy tile -->
+  <rect width="32" height="32" rx="7" fill="#0b1530"/>
+  <svg x="4" y="4" width="24" height="24" viewBox="0 0 512 512">
+    <path fill="#ffffff" fill-rule="evenodd" d="M4 232.87 a228.87 228.87 0 1 0 457.75 0 a228.87 228.87 0 1 0 -457.75 0Z M88.68 232.87 a144.19 144.19 0 1 1 288.38 0 a144.19 144.19 0 1 1 -288.38 0Z"/>
+    <path fill="#19d3c5" d="M262.01 262.01 L436.91 336.57 L508 508 L336.57 436.91 Z"/>
+  </svg>
 </svg>

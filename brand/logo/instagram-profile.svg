@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080">
+  <title>Q8Pixel: Instagram profile</title>
+  <rect width="1080" height="1080" fill="#0b1530"/>
+  <!-- mark at 1.21x, sphere centre (505,505); spire tip about 371px from the canvas centre, inside the r=400 crop -->
+  <path fill="#ffffff" d="M726.79 601.81 A242 242 0 1 0 601.81 726.79 L568.33 654.26 A162.14 162.14 0 1 1 654.26 568.33Z"/>
+  <path fill="#19d3c5" d="M539.22 539.22 L717.19 621.36 L799.33 799.33 L621.36 717.19 Z"/>
+</svg>

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <title>Q8Pixel mark: Kuwait Modern (sphere and spire)</title>
+  <!-- Sphere: the Q bowl, opened where the spire passes through it -->
+  <!-- Spire: a rhombus whose widest point sits exactly on the sphere's outline; half inside, half outside -->
+  <path fill="#0b1530" d="M434 320.28 A220.19 220.19 0 1 0 320.28 434 L289.82 368.01 A147.53 147.53 0 1 1 368.01 289.82Z"/>
+  <path fill="#2f6bff" d="M263.33 263.33 L425.26 338.07 L500 500 L338.07 425.26 Z"/>
+  <path fill="#19d3c5" d="M263.33 263.33 L425.26 338.07 L500 500 Z"/>
+</svg>

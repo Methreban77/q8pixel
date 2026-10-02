@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Q8Pixel Lockup</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;800&family=Readex+Pro:wght@500&display=block" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0b1530; --deep:#13204a; --blue:#2f6bff; --teal:#19d3c5; --mist:#e8eeff;
+    --F:118px;   /* wordmark size */
+    --B:150px;   /* mark size (tight box) */
+  }
+  html,body{margin:0;padding:0;width:1600px;height:800px;overflow:hidden}
+  .half{width:1600px;height:400px;display:flex;align-items:center;justify-content:center}
+  .light{background:#ffffff;color:var(--navy)}
+  .dark{background:var(--navy);color:#ffffff}
+  .lockup{display:flex;align-items:center}
+  .brand{white-space:nowrap;line-height:1;font-size:var(--F)}
+  /* the mark's sphere centre sits on the optical centre of the capitals (0.3725em above the baseline) */
+  .mark{display:inline-block;width:var(--B);height:var(--B);vertical-align:calc(0.3725 * var(--F) - 0.5488 * var(--B))}
+  /* Wordmark: custom geometric Q (the mark in miniature) + Plus Jakarta Sans.
+     Tracking: -0.02em at display sizes; use -0.01em below 48px. */
+  .word{font-family:'Plus Jakarta Sans',sans-serif;letter-spacing:-0.02em;margin-left:0.25em}
+  .wq{display:inline-block;width:0.878em;height:1em;vertical-align:-0.15em;overflow:visible;fill:currentColor;margin-right:-0.005em}
+  .q8{font-weight:800}
+  .px{font-weight:500}
+  .rule{width:2px;height:112px;margin:0 46px;flex:none}
+  .light .rule{background:#d3dbee}
+  .dark .rule{background:rgba(232,238,255,.28)}
+  .tags{display:flex;flex-direction:column;gap:10px;width:368px}
+  .en,.ar{display:flex;justify-content:space-between;align-items:center;white-space:nowrap}
+  .en{font-family:'Plus Jakarta Sans',sans-serif;font-weight:500;font-size:22px;letter-spacing:.01em;line-height:30px}
+  .ar{font-family:'Readex Pro',sans-serif;font-weight:500;font-size:28px;line-height:38px}
+  .tags i{display:block;width:5px;height:5px;border-radius:50%;flex:none}
+  .light .en,.light .ar{color:#46536f}
+  .dark .en,.dark .ar{color:#b4c1e2}
+  .light .tags i{background:var(--blue)}
+  .dark .tags i{background:var(--teal)}
+</style>
+</head>
+<body>
+  <div class="half light">
+    <div class="lockup">
+      <div class="brand">
+        <svg class="mark" viewBox="12 12 488 488" role="img" aria-label="Q8Pixel mark">
+          <path fill="#0b1530" d="M434 320.28 A220.19 220.19 0 1 0 320.28 434 L289.82 368.01 A147.53 147.53 0 1 1 368.01 289.82Z"/>
+          <path fill="#2f6bff" d="M263.33 263.33 L425.26 338.07 L500 500 L338.07 425.26 Z"/>
+          <path fill="#19d3c5" d="M263.33 263.33 L425.26 338.07 L500 500 Z"/>
+        </svg><span class="word" aria-label="Q8Pixel"><svg class="wq" viewBox="0 -170 175.6 200" aria-hidden="true"><path d="M159.38 -44.31 A77.5 77.5 0 1 0 118.19 -3.12 L106.47 -30.74 A47.5 47.5 0 1 1 131.76 -56.03Z"/><path d="M100.09 -62.41 L156.6 -38.43 L180.56 18.06 L124.07 -5.9 Z"/></svg><span class="q8">8</span><span class="px">Pixel</span></span>
+      </div>
+      <div class="rule"></div>
+      <div class="tags">
+        <div class="en"><span>Websites</span><i></i><span>Mobile Apps</span><i></i><span>Hosting</span></div>
+        <div class="ar" lang="ar" dir="rtl"><span>مواقع</span><i></i><span>تطبيقات</span><i></i><span>استضافة</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="half dark">
+    <div class="lockup">
+      <div class="brand">
+        <svg class="mark" viewBox="12 12 488 488" role="img" aria-label="Q8Pixel mark">
+          <path fill="#ffffff" d="M434 320.28 A220.19 220.19 0 1 0 320.28 434 L289.82 368.01 A147.53 147.53 0 1 1 368.01 289.82Z"/>
+          <path fill="#19d3c5" d="M263.33 263.33 L425.26 338.07 L500 500 L338.07 425.26 Z"/>
+        </svg><span class="word" aria-label="Q8Pixel"><svg class="wq" viewBox="0 -170 175.6 200" aria-hidden="true"><path d="M159.38 -44.31 A77.5 77.5 0 1 0 118.19 -3.12 L106.47 -30.74 A47.5 47.5 0 1 1 131.76 -56.03Z"/><path d="M100.09 -62.41 L156.6 -38.43 L180.56 18.06 L124.07 -5.9 Z"/></svg><span class="q8">8</span><span class="px">Pixel</span></span>
+      </div>
+      <div class="rule"></div>
+      <div class="tags">
+        <div class="en"><span>Websites</span><i></i><span>Mobile Apps</span><i></i><span>Hosting</span></div>
+        <div class="ar" lang="ar" dir="rtl"><span>مواقع</span><i></i><span>تطبيقات</span><i></i><span>استضافة</span></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

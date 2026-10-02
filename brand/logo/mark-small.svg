@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <title>Q8Pixel mark: small-size cut for 32px and below (favicon)</title>
+  <!-- One colour, heavier ring, no gap, cropped tight. Use #ffffff on dark backgrounds. -->
+  <path fill="#0b1530" fill-rule="evenodd" d="M4 232.87 a228.87 228.87 0 1 0 457.75 0 a228.87 228.87 0 1 0 -457.75 0Z M88.68 232.87 a144.19 144.19 0 1 1 288.38 0 a144.19 144.19 0 1 1 -288.38 0Z"/>
+  <path fill="#0b1530" d="M262.01 262.01 L436.91 336.57 L508 508 L336.57 436.91 Z"/>
+</svg>
