@@ -17,16 +17,17 @@ const AR = {
   "services.hosting.title": "الاستضافة",
   "services.hosting.text": "استضافة آمنة وموثوقة مع شهادة SSL ونسخ احتياطي ودعم مستمر، ليبقى موقعك متاحاً دائماً.",
   "work.title": "أعمالنا",
-  "work.note": "نماذج تصميم توضح ما يمكننا بناؤه لنشاطك التجاري.",
+  "work.note": "مشاريع تجريبية لأنشطة تجارية افتراضية — اضغط على أي مشروع لتجربته مباشرة.",
   "work.web.tag": "موقع إلكتروني",
-  "work.web.title": "موقع مطعم",
-  "work.web.text": "قائمة طعام إلكترونية ومعرض صور وحجز طاولات بالعربية والإنجليزية.",
+  "work.web.title": "جمر المرسى — مطعم",
+  "work.web.text": "قائمة طعام كاملة بلغتين مع بحث، وساعات عمل مباشرة، ومعرض صور، وحجز طاولات.",
   "work.app.tag": "تطبيق جوال",
-  "work.app.title": "تطبيق حجز صالون",
-  "work.app.text": "يحجز العملاء مواعيدهم ويتلقون التذكيرات ويدفعون من هواتفهم.",
+  "work.app.title": "ليلك — تطبيق حجز صالون",
+  "work.app.text": "احجز الخدمة والأخصائية والموعد بلمسات قليلة، ثم أدر حجوزاتك. يمكن تثبيته على أي هاتف.",
   "work.store.tag": "متجر إلكتروني",
-  "work.store.title": "متجر إلكتروني",
-  "work.store.text": "كتالوج منتجات وسلة مشتريات ودفع عبر كي نت أو البطاقات مع تتبع الطلبات.",
+  "work.store.title": "سديم — دار العود والعطور",
+  "work.store.text": "كتالوج منتجات مع مكونات العطور، وسلة مشتريات، وإتمام الطلب مع التوصيل لجميع مناطق الكويت.",
+  "work.cta": "جرّب النسخة التجريبية",
   "process.title": "طريقة عملنا",
   "process.1.title": "نتحدث",
   "process.1.text": "نتعرّف على نشاطك التجاري وأهدافك.",
@@ -107,7 +108,6 @@ if ("IntersectionObserver" in window) {
       if (!entry.isIntersecting) return;
       const el = entry.target;
       el.classList.add("is-in");
-      if (el.classList.contains("work-card")) el.classList.add("built");
       revealer.unobserve(el);
       // Hand control back to each element's own hover transitions once revealed.
       setTimeout(() => {

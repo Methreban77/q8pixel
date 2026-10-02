@@ -292,70 +292,23 @@ h3 { margin: 0 0 8px; font-size: 1.2rem; }
   font-weight: 600;
 }
 
-.preview {
-  aspect-ratio: 16 / 10;
-  display: grid;
-  place-items: center;
+.work-link { display: flex; flex-direction: column; height: 100%; color: inherit; text-decoration: none; }
+.work-link:focus-visible { outline: 3px solid var(--blue); outline-offset: -3px; border-radius: var(--radius); }
+
+.preview { aspect-ratio: 16 / 10; overflow: hidden; background: var(--navy); }
+.preview img { width: 100%; height: 100%; object-fit: cover; object-position: top center; }
+
+.work-body { flex: 1; display: flex; flex-direction: column; align-items: flex-start; }
+
+.work-cta {
+  margin-top: auto;
+  padding-top: 16px;
+  color: var(--blue);
+  font-weight: 600;
 }
 
-.preview-web { background: linear-gradient(135deg, #ffb15a, #ff5f6d); }
-.preview-app { background: linear-gradient(135deg, #7b5cff, #c86bfa); }
-.preview-store { background: linear-gradient(135deg, #16c79a, #0f8f86); }
-
-.mock-browser,
-.mock-phone {
-  display: flex;
-  flex-direction: column;
-  gap: 7px;
-  background: #fff;
-  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.18);
-}
-
-.mock-browser {
-  width: 76%;
-  height: 72%;
-  padding: 22px 12px 12px;
-  border-radius: 8px;
-  position: relative;
-}
-
-.mock-browser::before {
-  content: "";
-  position: absolute;
-  top: 8px;
-  inset-inline-start: 10px;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #ff5f57;
-  box-shadow: 10px 0 #febc2e, 20px 0 #28c840;
-}
-
-html[dir="rtl"] .mock-browser::before { box-shadow: -10px 0 #febc2e, -20px 0 #28c840; }
-
-.mock-phone {
-  width: 30%;
-  height: 86%;
-  padding: 14px 8px;
-  border: 4px solid var(--navy);
-  border-radius: 16px;
-}
-
-.mock-hero { flex: 0 0 34%; border-radius: 5px; background: var(--bg-alt); }
-.mock-line { height: 6px; border-radius: 3px; background: #dfe4ee; }
-.mock-line.short { width: 55%; }
-.mock-slot { height: 14px; border-radius: 4px; background: #efe9ff; }
-
-.mock-row,
-.mock-grid {
-  flex: 1;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 6px;
-}
-
-.mock-row span,
-.mock-grid span { border-radius: 4px; background: var(--bg-alt); }
+.work-cta::after { content: " →"; }
+html[dir="rtl"] .work-cta::after { content: " ←"; }
 
 .email {
   margin: -16px 0 28px;
@@ -810,34 +763,20 @@ html.js [data-reveal] {
 
 html.js [data-reveal].is-in { opacity: 1; transform: none; }
 
-/* Portfolio mockups build themselves when they scroll into view */
-.work-card.built :is(.mock-hero, .mock-line, .mock-slot, .mock-row span, .mock-grid span) {
-  animation: grow-in 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) both;
-}
-
-.work-card.built :is(.mock-line, .mock-row span:nth-child(1), .mock-grid span:nth-child(-n+3)) { animation-delay: 0.35s; }
-.work-card.built :is(.mock-line.short, .mock-slot, .mock-row span:nth-child(2), .mock-grid span:nth-child(n+4)) { animation-delay: 0.5s; }
-.work-card.built :is(.mock-slot + .mock-slot, .mock-row span:nth-child(3)) { animation-delay: 0.65s; }
-.work-card.built .mock-hero { animation-delay: 0.2s; }
-
-@keyframes grow-in {
-  from { opacity: 0; transform: scaleX(0.3); transform-origin: left; }
-  to { opacity: 1; transform: none; transform-origin: left; }
-}
-
+/* Portfolio cards lift and their screenshot slowly zooms on hover */
 .work-card { transition: transform 0.25s ease, box-shadow 0.25s ease; }
 .work-card:hover { transform: translateY(-3px); box-shadow: 0 16px 34px rgba(11, 21, 48, 0.1); }
-.work-card .preview > * { transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1); }
-.work-card:hover .preview > * { transform: translateY(-4px) scale(1.04); }
+.work-card .preview img { transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1); }
+.work-card:hover .preview img { transform: scale(1.04); }
 
 /* Respect visitors who turn animations off */
 @media (prefers-reduced-motion: reduce) {
   .intro, .win, .device, .spire, .stage-glow { opacity: 1; animation: none; }
   .ring-draw { stroke-dashoffset: 0; animation: none; }
-  .build, .w-btn, .ph-toggle, .ph-toggle i, .ph-tabs b, .work-card.built * { animation: none !important; }
+  .build, .w-btn, .ph-toggle, .ph-toggle i, .ph-tabs b { animation: none !important; }
   .w-cursor, .spark { display: none; }
   html.js [data-reveal] { opacity: 1; transform: none; transition: none; }
-  .work-card, .work-card .preview > * { transition: none; }
+  .work-card, .work-card .preview img { transition: none; }
 }
 
 /* Small screens */

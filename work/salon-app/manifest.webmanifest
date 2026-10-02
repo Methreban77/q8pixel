@@ -1,0 +1,22 @@
+{
+  "name": "Laylak Beauty Lounge",
+  "short_name": "Laylak",
+  "description": "Salon booking app prototype for Laylak Beauty Lounge, a fictional Kuwaiti beauty salon. Concept project by Q8Pixel.",
+  "id": "./",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#FBF5EF",
+  "theme_color": "#3E1638",
+  "lang": "en",
+  "dir": "auto",
+  "categories": ["lifestyle", "beauty"],
+  "icons": [
+    { "src": "favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "icon-maskable.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "maskable" },
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

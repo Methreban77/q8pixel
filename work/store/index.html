@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Sadeem — Oud &amp; Perfume House · Concept store by Q8Pixel</title>
+  <meta name="description" content="Sadeem is a bilingual (English/Arabic) online store concept for an imagined Kuwaiti oud and perfume house: collections, product pages with fragrance notes, cart and a demo checkout. Designed and built by Q8Pixel.">
+  <meta name="theme-color" content="#15110e">
+  <meta name="color-scheme" content="light">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="canonical" href="https://q8pixel.com/work/store/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Q8Pixel">
+  <meta property="og:url" content="https://q8pixel.com/work/store/">
+  <meta property="og:title" content="Sadeem — Oud &amp; Perfume House (concept store by Q8Pixel)">
+  <meta property="og:description" content="A bilingual online store concept for an imagined Kuwaiti oud &amp; perfume boutique — shop, cart and demo checkout in KD. متجر إلكتروني تجريبي لدار عود وعطور كويتية متخيَّلة، بالعربية والإنجليزية.">
+  <meta property="og:image" content="https://q8pixel.com/work/store/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Sadeem · سديم — three oud and perfume pieces on stone pedestals under a golden arch, a concept store by Q8Pixel">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="ar_KW">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Sadeem — Oud &amp; Perfume House (concept store by Q8Pixel)">
+  <meta name="twitter:description" content="A bilingual online store concept for an imagined Kuwaiti oud &amp; perfume boutique. متجر تجريبي لدار عود وعطور كويتية متخيَّلة.">
+  <meta name="twitter:image" content="https://q8pixel.com/work/store/og.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@400;500;600&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+  <!-- Arabic logotype: Reem Kufi, subset to the five glyphs of "سديـم" -->
+  <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@500&text=%D8%B3%D8%AF%D9%8A%D9%85%D9%80&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    (function () {
+      var l = 'en';
+      try {
+        var q = new URLSearchParams(location.search).get('lang');
+        if (q === 'ar' || q === 'en') { l = q; localStorage.setItem('sadeem.lang', JSON.stringify(q)); }
+        else { var s = JSON.parse(localStorage.getItem('sadeem.lang') || 'null'); if (s === 'ar' || s === 'en') l = s; }
+      } catch (e) { /* storage unavailable: default to English */ }
+      document.documentElement.lang = l;
+      document.documentElement.dir = l === 'ar' ? 'rtl' : 'ltr';
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main" data-act="skip">Skip to content</a>
+  <div id="chrome-top"></div>
+  <main id="main" tabindex="-1"></main>
+  <footer id="ftr" class="ftr"></footer>
+  <div id="menu" class="menu"></div>
+  <div id="drawer" class="drawer"></div>
+  <div id="toasts" class="toasts" role="status" aria-live="polite"></div>
+  <div id="sr-live" class="sr" aria-live="polite"></div>
+  <a id="concept" class="concept" href="../../" aria-label="Concept project by Q8Pixel">Concept project by Q8Pixel</a>
+  <noscript><p>Sadeem is a concept store by Q8Pixel and needs JavaScript to run. <a href="../../">Back to Q8Pixel</a></p></noscript>
+  <script src="data.js" defer></script>
+  <script src="art.js" defer></script>
+  <script src="app.js" defer></script>
+</body>
+</html>
