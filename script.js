@@ -126,6 +126,14 @@ if ("IntersectionObserver" in window) {
       stage.classList.toggle("paused", !entry.isIntersecting);
     }).observe(stage);
   }
+
+  // "How we work" illustrations play only while the section is visible.
+  const steps = document.getElementById("steps");
+  if (steps) {
+    new IntersectionObserver(([entry]) => {
+      steps.classList.toggle("playing", entry.isIntersecting);
+    }, { threshold: 0.2 }).observe(steps);
+  }
 } else {
   document.documentElement.classList.remove("js");
 }

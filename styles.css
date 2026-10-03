@@ -340,11 +340,28 @@ html[dir="rtl"] .work-cta::after { content: " ←"; }
 
 .steps li {
   counter-increment: step;
+  display: flex;
+  flex-direction: column;
   background: #fff;
   border-radius: var(--radius);
   padding: 24px;
   border: 1px solid var(--line);
+  overflow: hidden;
 }
+
+/* Illustration panel sits above the step number (order -1 beats the ::before number) */
+.step-art {
+  order: -1;
+  margin: -24px -24px 18px;
+  aspect-ratio: 16 / 10;
+  background: linear-gradient(160deg, #eef3ff, #f6f8fc);
+  direction: ltr; /* artwork never mirrors in Arabic */
+}
+
+.art-design { background: linear-gradient(160deg, #e9faf8, #f6f8fc); }
+.art-build { background: linear-gradient(160deg, #e8edfb, #f3f5fb); }
+.art-support { background: linear-gradient(160deg, #f0f4ff, #f8f9fd); }
+.step-art svg { display: block; width: 100%; height: 100%; }
 
 .steps li::before {
   content: "0" counter(step);
@@ -750,6 +767,78 @@ html[dir="rtl"] .work-cta::after { content: " ←"; }
   40%, 60% { opacity: 0.85; transform: translateY(-1.5cqw) rotate(45deg) scale(1); }
 }
 
+/* "How we work" illustrations: each loops while the section is on screen.
+   Shared timing per scene so the pieces stay in sync. */
+.step-art :is(g, rect, circle, path) { transform-box: fill-box; }
+.steps .step-art * { animation-play-state: paused; }
+.steps.playing .step-art * { animation-play-state: running; }
+
+/* 01 Talk — message, typing, reply with read ticks, a liked reply */
+.t-b1, .t-b2, .t-b3 { transform-origin: center bottom; }
+.t-b1 { animation: t-b1 6s cubic-bezier(0.2, 0.8, 0.2, 1) infinite both; }
+.t-typing { animation: t-typing 6s ease infinite both; }
+.t-b2 { animation: t-b2 6s cubic-bezier(0.2, 0.8, 0.2, 1) infinite both; }
+.t-b3 { animation: t-b3 6s cubic-bezier(0.2, 0.8, 0.2, 1) infinite both; }
+.t-dot { animation: t-dot 0.9s ease-in-out infinite; }
+.t-dot:nth-child(3) { animation-delay: 0.15s; }
+.t-dot:nth-child(4) { animation-delay: 0.3s; }
+
+@keyframes t-b1 { 0% { opacity: 0; transform: translateY(8px) scale(0.94); } 8%, 88% { opacity: 1; transform: none; } 96%, 100% { opacity: 0; } }
+@keyframes t-typing { 0%, 12% { opacity: 0; } 16%, 37% { opacity: 1; } 41%, 100% { opacity: 0; } }
+@keyframes t-b2 { 0%, 38% { opacity: 0; transform: translateY(8px) scale(0.94); } 46%, 88% { opacity: 1; transform: none; } 96%, 100% { opacity: 0; } }
+@keyframes t-b3 { 0%, 58% { opacity: 0; transform: translateY(8px) scale(0.94); } 66%, 88% { opacity: 1; transform: none; } 96%, 100% { opacity: 0; } }
+@keyframes t-dot { 0%, 100% { opacity: 0.35; transform: translateY(0); } 50% { opacity: 1; transform: translateY(-2px); } }
+
+/* 02 Design — blocks snap into an artboard, palette pops, cursor drags the button into place */
+.d-1, .d-2, .d-3, .d-4 { transform-origin: left center; }
+.d-1 { animation: d-in 7s cubic-bezier(0.2, 0.8, 0.2, 1) infinite both; }
+.d-2 { animation: d-in2 7s cubic-bezier(0.2, 0.8, 0.2, 1) infinite both; }
+.d-3 { animation: d-in3 7s cubic-bezier(0.2, 0.8, 0.2, 1) infinite both; }
+.d-4 { animation: d-in4 7s cubic-bezier(0.2, 0.8, 0.2, 1) infinite both; }
+.d-sel { animation: d-sel 7s ease infinite both; }
+.d-btn { animation: d-btn 7s cubic-bezier(0.5, 0, 0.2, 1) infinite both; }
+.d-cursor { animation: d-cursor 7s ease infinite both; }
+.d-p { transform-origin: center; animation: d-pop 7s cubic-bezier(0.3, 1.5, 0.5, 1) infinite both; }
+.d-p2 { animation-delay: 0.15s; }
+.d-p3 { animation-delay: 0.3s; }
+.d-p4 { animation-delay: 0.45s; }
+
+@keyframes d-in  { 0% { opacity: 0; transform: scaleX(0.2); } 7%, 88% { opacity: 1; transform: none; } 96%, 100% { opacity: 0; } }
+@keyframes d-in2 { 0%, 7% { opacity: 0; transform: scale(0.85); } 15%, 88% { opacity: 1; transform: none; } 96%, 100% { opacity: 0; } }
+@keyframes d-in3 { 0%, 17% { opacity: 0; transform: scaleX(0.2); } 24%, 88% { opacity: 1; transform: none; } 96%, 100% { opacity: 0; } }
+@keyframes d-in4 { 0%, 21% { opacity: 0; transform: scaleX(0.2); } 28%, 88% { opacity: 1; transform: none; } 96%, 100% { opacity: 0; } }
+@keyframes d-sel { 0%, 14% { opacity: 0; } 17%, 30% { opacity: 1; } 33%, 100% { opacity: 0; } }
+@keyframes d-btn { 0%, 30% { opacity: 0; transform: translate(118px, -6px); } 34% { opacity: 1; transform: translate(118px, -6px); } 52%, 88% { opacity: 1; transform: none; } 96%, 100% { opacity: 0; } }
+@keyframes d-cursor { 0%, 30% { opacity: 0; } 34%, 54% { opacity: 1; } 60%, 100% { opacity: 0; } }
+@keyframes d-pop { 0%, 10% { opacity: 0; transform: scale(0.3); } 16%, 88% { opacity: 1; transform: none; } 96%, 100% { opacity: 0; } }
+
+/* 03 Build — code types line by line, deploy bar fills, "live" badge pops */
+.b-l { transform-origin: left center; animation: b-type 7s steps(8, end) infinite both; }
+.b-l2 { animation-delay: 0.35s; }
+.b-l3 { animation-delay: 0.7s; }
+.b-l4 { animation-delay: 1.05s; }
+.b-l5 { animation-delay: 1.4s; }
+.b-l6 { animation-delay: 1.75s; }
+.b-bar { transform-origin: left center; animation: b-bar 7s cubic-bezier(0.6, 0, 0.3, 1) infinite both; }
+.b-live { transform-origin: center; animation: b-live 7s cubic-bezier(0.3, 1.6, 0.5, 1) infinite both; }
+
+@keyframes b-type { 0% { opacity: 0; transform: scaleX(0); } 1% { opacity: 1; } 7%, 88% { opacity: 1; transform: none; } 96%, 100% { opacity: 0; } }
+@keyframes b-bar { 0%, 40% { transform: scaleX(0); opacity: 1; } 66%, 88% { transform: none; opacity: 1; } 96%, 100% { opacity: 0; } }
+@keyframes b-live { 0%, 66% { opacity: 0; transform: scale(0.4); } 72%, 88% { opacity: 1; transform: none; } 96%, 100% { opacity: 0; } }
+
+/* 04 Support — growth line draws, area fades in, live dot pulses, shield check pops */
+.s-line { stroke-dasharray: 100; animation: s-line 6s cubic-bezier(0.5, 0, 0.3, 1) infinite both; }
+.s-area { animation: s-area 6s ease infinite both; }
+.s-dot { transform-origin: center; animation: s-dot 6s ease infinite both; }
+.s-ring { transform-origin: center; animation: s-ring 1.6s ease-out infinite; }
+.s-shield { transform-origin: center; animation: s-shield 6s cubic-bezier(0.3, 1.6, 0.5, 1) infinite both; }
+
+@keyframes s-line { 0% { stroke-dashoffset: 100; opacity: 1; } 45%, 88% { stroke-dashoffset: 0; opacity: 1; } 96%, 100% { stroke-dashoffset: 0; opacity: 0; } }
+@keyframes s-area { 0%, 30% { opacity: 0; } 50%, 88% { opacity: 1; } 96%, 100% { opacity: 0; } }
+@keyframes s-dot { 0%, 42% { opacity: 0; transform: scale(0); } 48%, 88% { opacity: 1; transform: none; } 96%, 100% { opacity: 0; } }
+@keyframes s-ring { 0% { opacity: 0.9; transform: scale(1); } 100% { opacity: 0; transform: scale(2.6); } }
+@keyframes s-shield { 0%, 52% { opacity: 0; transform: scale(0.4); } 60%, 88% { opacity: 1; transform: none; } 96%, 100% { opacity: 0; } }
+
 /* Save battery when the show reel is off screen */
 .stage.paused *, .stage.paused *::before, .stage.paused *::after { animation-play-state: paused !important; }
 
@@ -775,6 +864,8 @@ html.js [data-reveal].is-in { opacity: 1; transform: none; }
   .ring-draw { stroke-dashoffset: 0; animation: none; }
   .build, .w-btn, .ph-toggle, .ph-toggle i, .ph-tabs b { animation: none !important; }
   .w-cursor, .spark { display: none; }
+  .step-art * { animation: none !important; }
+  .t-typing, .d-sel, .d-cursor, .s-ring { display: none; }
   html.js [data-reveal] { opacity: 1; transform: none; transition: none; }
   .work-card, .work-card .preview img { transition: none; }
 }
