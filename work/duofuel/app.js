@@ -182,6 +182,12 @@
     'ff.rule': 'ما نكتب «خالي من» على أي علبة إلا إذا انصنعت على خط إنتاج منفصل ونظيف، وكل دفعة نجحت في فحوصات المختبر للجلوتين والحليب والمكسرات.',
     'faq.q6': 'عندي حساسية. أقدر آكل DUOFUEL؟',
     'faq.a6': 'مو الحين: العلبتين فيها حليب وشوفان (جلوتين) ولوز، ومكتوب على الملصق. النسخ الخالية من الجلوتين واللاكتوز والمكسرات في خطة السنة الثانية والثالثة.',
+    'nav.survey': 'الاستبيان',
+    'survey.title': 'ساعدنا نطوّر DUOFUEL',
+    'survey.lead': 'استبيان دقيقة وحدة لمشروع تسويق جامعي، بدون أسماء أو إيميلات.',
+    'survey.qrAlt': 'رمز QR يفتح هذا الاستبيان',
+    'survey.qrCap': 'امسح الرمز وافتح الاستبيان من تلفونك، أو أرسله لربعك اللي يتمرنون.',
+    'survey.wait': 'الاستبيان يفتح قريباً. امسح الرمز أو ارجع لنا بعد يوم.',
     'foot.sign': 'مرحلتين. هدف واحد.',
     'made.kw': 'صُنع في الكويت، من تمر كويتي',
     'dates.p4': 'صُنع في الكويت',
@@ -217,6 +223,10 @@
     }
   };
   var lang = html.lang === 'ar' ? 'ar' : 'en';
+
+  /* The survey is a Google Form. Paste its embed link here (the src="..." from Send → <> in Google Forms);
+     until then the section shows a "opens soon" note. */
+  var FORM_URL = '';
   var t = function () { return T[lang]; };
 
   function applyLang(l) {
@@ -388,6 +398,21 @@
   });
   var _apply = applyLang;
   applyLang = function (l) { _apply(l); drawVotes(); voteMsg.textContent = ''; };
+
+  /* ------------------------------------------------------------------
+     Survey embed
+     ------------------------------------------------------------------ */
+  (function () {
+    var box = $('[data-survey]');
+    if (!box || !FORM_URL) return;
+    var f = doc.createElement('iframe');
+    f.src = FORM_URL + (FORM_URL.indexOf('embedded=true') < 0 ? (FORM_URL.indexOf('?') < 0 ? '?' : '&') + 'embedded=true' : '');
+    f.title = 'DUOFUEL survey';
+    f.loading = 'lazy';
+    f.className = 'survey-iframe';
+    var wait = $('[data-survey-wait]', box); if (wait) wait.hidden = true;
+    box.appendChild(f);
+  })();
 
   setVariant(variant);
   applyLang(lang);
