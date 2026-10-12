@@ -422,3 +422,12 @@ html[lang="ar"] .ff-name { font-family: var(--f-ar); font-size: 22px; }
 .ff-arrow::after { content: ""; position: absolute; inset-inline-end: 0; top: -4px; border: 5px solid transparent; border-inline-start: 7px solid var(--ink); border-inline-end: 0; }
 .ff-swap > span:last-child { color: var(--ink); font-weight: 700; }
 @media (min-width: 900px) { .next-grid { grid-template-columns: 1fr 1fr; gap: 72px; } }
+
+/* ---------- made in Kuwait mark ---------- */
+.made-kw { grid-column: 1 / -1; display: inline-flex; align-items: center; gap: 10px; justify-self: start; margin-top: -6px; font-weight: 800; font-size: 14.5px; }
+.kw-flag { position: relative; display: inline-grid; grid-template-rows: repeat(3, 1fr); width: 26px; height: 16px; border-radius: 2px; overflow: hidden; box-shadow: 0 0 0 1px rgba(43, 27, 18, .25); }
+.kw-flag i:nth-child(1) { background: #007a3d; }
+.kw-flag i:nth-child(2) { background: #fff; }
+.kw-flag i:nth-child(3) { background: #ce1126; }
+.kw-flag::before { content: ""; position: absolute; inset-inline-start: 0; top: 0; bottom: 0; width: 9px; background: #000; clip-path: polygon(0 0, 100% 33%, 100% 67%, 0 100%); }
+html[dir="rtl"] .kw-flag { direction: ltr; }
