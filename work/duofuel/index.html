@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>DUOFUEL — Fuel before. Refuel after. · Concept by Q8Pixel</title>
+  <meta name="description" content="DUOFUEL is a concept snack for Kuwait in two packs, Gym and Life: one wrapper, two sealed bars, one before and one after.">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#c8a378">
+  <meta name="color-scheme" content="light">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Noto+Kufi+Arabic:wght@400..900&display=swap">
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    (function () {
+      var l = 'en', d = document.documentElement;
+      try {
+        var q = new URLSearchParams(location.search).get('lang');
+        if (q === 'ar' || q === 'en') { l = q; localStorage.setItem('duofuel-lang', q); }
+        else { var s = localStorage.getItem('duofuel-lang'); if (s === 'ar' || s === 'en') l = s; }
+      } catch (e) { /* storage unavailable: English */ }
+      d.lang = l; d.dir = l === 'ar' ? 'rtl' : 'ltr';
+      d.className += ' js' + (l === 'ar' ? ' i18n-pending' : '');
+      setTimeout(function () { d.classList.remove('i18n-pending'); }, 1500);
+    })();
+  </script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
+
+  <svg class="sprite" width="0" height="0" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="i-scissors" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.1 15.9M14.5 14.5 20 20M8.1 8.1 12 12"/></g></symbol>
+      <symbol id="i-leaf" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.5 19 2c1 2 2 4.2 2 8 0 5.5-4.8 10-10 10Z"/><path d="M2 21c0-3 1.9-5.4 5.2-6.1C9.5 14.4 12 13 13 12"/></g></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></symbol>
+      <symbol id="i-minus" viewBox="0 0 24 24"><path d="M5 12h14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></symbol>
+      <symbol id="i-gym" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.4 14.4 9.6 9.6M18.66 21.51a2 2 0 1 1-2.83-2.83l-1.77 1.77a2 2 0 1 1-2.83-2.83l6.37-6.37a2 2 0 1 1 2.83 2.83l-1.77 1.77a2 2 0 1 1 2.83 2.83zM21.5 21.5l-1.4-1.4M3.9 3.9 2.5 2.5M6.4 12.77a2 2 0 1 1-2.83-2.83l1.77-1.77a2 2 0 1 1-2.83-2.83l2.83-2.83a2 2 0 1 1 2.83 2.83l1.77-1.77a2 2 0 1 1 2.83 2.83z"/></g></symbol>
+      <symbol id="i-store" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m2 7 4.4-4.4A2 2 0 0 1 7.8 2h8.4a2 2 0 0 1 1.4.6L22 7"/><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><path d="M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4M2 7h20M22 7v3a2 2 0 0 1-2 2 2.7 2.7 0 0 1-1.6-.6.7.7 0 0 0-.8 0A2.7 2.7 0 0 1 16 12a2.7 2.7 0 0 1-1.6-.6.7.7 0 0 0-.8 0A2.7 2.7 0 0 1 12 12a2.7 2.7 0 0 1-1.6-.6.7.7 0 0 0-.8 0A2.7 2.7 0 0 1 8 12a2.7 2.7 0 0 1-1.6-.6.7.7 0 0 0-.8 0A2.7 2.7 0 0 1 4 12a2 2 0 0 1-2-2V7"/></g></symbol>
+      <symbol id="i-phone" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></g></symbol>
+      <symbol id="i-campus" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.4 10.9a1 1 0 0 0 0-1.8L12.8 5.2a2 2 0 0 0-1.6 0L2.6 9.1a1 1 0 0 0 0 1.8l8.6 3.9a2 2 0 0 0 1.6 0z"/><path d="M22 10v6M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></g></symbol>
+      <symbol id="i-qr" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="6" height="6" rx="1"/><rect x="15" y="3" width="6" height="6" rx="1"/><rect x="3" y="15" width="6" height="6" rx="1"/><path d="M21 16h-3a2 2 0 0 0-2 2v3M21 21v.01M12 7v3a2 2 0 0 1-2 2H7M3 12h.01M12 3h.01M12 16v.01M16 12h1M21 12v.01M12 21v-1"/></g></symbol>
+      <symbol id="i-scale" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 16 3-8 3 8c-.9.6-1.9 1-3 1s-2.1-.4-3-1ZM2 16l3-8 3 8c-.9.6-1.9 1-3 1s-2.1-.4-3-1ZM7 21h10M12 3v18M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></g></symbol>
+      <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></symbol>
+      <!-- bar textures -->
+      <pattern id="p-oats" width="34" height="26" patternUnits="userSpaceOnUse" patternTransform="rotate(-12)">
+        <rect width="34" height="26" fill="#c98a45"/>
+        <g fill="#efd3a1"><ellipse cx="6" cy="6" rx="5" ry="2.4" transform="rotate(25 6 6)"/><ellipse cx="22" cy="5" rx="4.6" ry="2.2" transform="rotate(-30 22 5)"/><ellipse cx="14" cy="16" rx="5" ry="2.3" transform="rotate(60 14 16)"/><ellipse cx="29" cy="19" rx="4.4" ry="2.1" transform="rotate(10 29 19)"/></g>
+        <g fill="#6b2f12"><ellipse cx="25" cy="12" rx="3.6" ry="2.4"/><ellipse cx="5" cy="20" rx="3.2" ry="2.1"/></g>
+      </pattern>
+      <pattern id="p-cocoa" width="30" height="24" patternUnits="userSpaceOnUse" patternTransform="rotate(8)">
+        <rect width="30" height="24" fill="#4a2a1c"/>
+        <g fill="#6d4330"><circle cx="5" cy="5" r="2.6"/><circle cx="18" cy="9" r="3"/><circle cx="10" cy="18" r="2.2"/><circle cx="25" cy="19" r="2.6"/></g>
+        <g fill="#2c160d"><circle cx="13" cy="4" r="1.6"/><circle cx="26" cy="6" r="1.3"/><circle cx="4" cy="14" r="1.4"/></g>
+      </pattern>
+    </defs>
+  </svg>
+
+  <header class="site-header">
+    <div class="wrap header-row">
+      <a class="wordmark" href="#top" aria-label="DUOFUEL, back to top" data-i18n-attr="aria-label:brand.home"><span class="wm-duo">DUO</span><span class="wm-fuel">FUEL</span></a>
+      <nav class="nav" aria-label="Main" data-i18n-attr="aria-label:nav.label">
+        <a href="#range" data-i18n="nav.range">Gym or Life</a>
+        <a href="#day" data-i18n="nav.day">Your day</a>
+        <a href="#inside" data-i18n="nav.inside">Inside the pack</a>
+        <a href="#dates" data-i18n="nav.dates">The dates</a>
+        <a href="#order" data-i18n="nav.order">Prices</a>
+      </nav>
+      <div class="header-tools">
+        <button class="lang-btn" type="button" data-lang-toggle lang="ar">عربي</button>
+        <a class="btn btn-ink btn-sm" href="#order" data-i18n="cta.order">Order a pack</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <!-- ============ HERO: the wrapper ============ -->
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <h1 id="hero-title" class="sr-only" data-i18n="hero.title">DUOFUEL: fuel before, refuel after</h1>
+      <div class="hero-grid wrap">
+        <div class="hero-half half-pre">
+          <p class="hero-word" aria-hidden="true"><span data-i18n="hero.pre1">Fuel</span><span data-i18n="hero.pre2">before.</span></p>
+          <p class="hero-note"><span class="v-gym" data-i18n="hero.preNote">Dates and oats, 30–60 minutes before you train.</span><span class="v-life" data-i18n="hero.preNoteLife">A light dates-and-oats bite before a walk, a class or a long afternoon.</span></p>
+        </div>
+        <div class="hero-half half-post">
+          <p class="hero-word" aria-hidden="true"><span data-i18n="hero.post1">Refuel</span><span data-i18n="hero.post2">after.</span></p>
+          <p class="hero-note"><span class="v-gym" data-i18n="hero.postNote">Protein and 3 g creatine, when the session ends.</span><span class="v-life" data-i18n="hero.postNoteLife">10 g protein instead of a sweet snack, at about 115 kcal.</span></p>
+        </div>
+
+        <div class="variant-switch" role="radiogroup" aria-label="Choose a pack" data-i18n-attr="aria-label:var.label">
+          <label><input type="radio" name="variant" value="gym" checked><span><strong>DUOFUEL Gym</strong><small data-i18n="var.gymSub">for hard training</small></span></label>
+          <label><input type="radio" name="variant" value="life"><span><strong>DUOFUEL Life</strong><small data-i18n="var.lifeSub">for a lighter day</small></span></label>
+        </div>
+
+        <!-- the pack: one wrapper, two halves, a tear line -->
+        <div class="pack" data-pack>
+          <div class="pack-half pack-pre">
+            <svg class="bar" viewBox="0 0 300 90" aria-hidden="true"><rect x="6" y="8" width="288" height="74" rx="14" fill="url(#p-oats)"/><rect x="6" y="8" width="288" height="74" rx="14" fill="none" stroke="#8a5424" stroke-width="3"/></svg>
+            <div class="wrap-face">
+              <span class="pf-brand">DUOFUEL</span>
+              <span class="pf-name">PRE</span>
+              <span class="pf-sub"><span class="v-gym" data-i18n="pack.preSub">Energy · 30 g carbs</span><span class="v-life" data-i18n="pack.preSubLife">Dates + oats · 95 kcal</span></span>
+            </div>
+          </div>
+          <button class="tear" type="button" data-tear aria-pressed="false">
+            <span class="tear-line" aria-hidden="true"></span>
+            <span class="tear-knob"><svg class="icon" aria-hidden="true"><use href="#i-scissors"/></svg></span>
+            <span class="tear-label" data-i18n="pack.tear">Tear here</span>
+          </button>
+          <div class="pack-half pack-post">
+            <svg class="bar" viewBox="0 0 300 90" aria-hidden="true"><rect x="6" y="8" width="288" height="74" rx="14" fill="url(#p-cocoa)"/><rect x="6" y="8" width="288" height="74" rx="14" fill="none" stroke="#24120a" stroke-width="3"/></svg>
+            <div class="wrap-face">
+              <span class="pf-brand">DUOFUEL</span>
+              <span class="pf-name">POST</span>
+              <span class="pf-sub"><span class="v-gym" data-i18n="pack.postSub">20 g protein + 3 g creatine</span><span class="v-life" data-i18n="pack.postSubLife">10 g protein · 115 kcal</span></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-foot">
+          <p class="hero-lede" data-i18n="hero.lede">One wrapper, two sealed bars. Eat the orange one before and keep the blue one for after.</p>
+          <div class="hero-actions">
+            <a class="btn btn-ink" href="#order"><span class="v-gym" data-i18n="cta.orderGym">Order Gym · KWD 1.500</span><span class="v-life" data-i18n="cta.orderLife">Order Life · KWD 1.250</span></a>
+            <a class="btn btn-line" href="#day" data-i18n="cta.how">See how it fits your day</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TWO PACKS ============ -->
+    <section class="range" id="range" aria-labelledby="range-title">
+      <div class="wrap">
+        <h2 id="range-title" class="h2" data-i18n="range.title">Two packs for two kinds of day</h2>
+        <div class="range-grid">
+          <article class="range-item range-gym">
+            <img src="img/pack-gym.jpg" width="905" height="648" loading="lazy" alt="DUOFUEL Gym pack in a black wrapper, held in a gloved hand in a gym" data-i18n-attr="alt:range.gymAlt">
+            <div class="range-body">
+              <h3>DUOFUEL Gym</h3>
+              <p data-i18n="range.gymFor">For people who lift, run or play hard three or more times a week.</p>
+              <dl class="range-facts">
+                <div><dt data-i18n="f.pack">Whole pack</dt><dd>~400 kcal</dd></div>
+                <div><dt data-i18n="f.carbs">Carbohydrate</dt><dd>~50 g</dd></div>
+                <div><dt data-i18n="f.protein">Protein</dt><dd>~23 g</dd></div>
+                <div><dt data-i18n="f.creatine">Creatine monohydrate</dt><dd>3 g</dd></div>
+              </dl>
+              <p class="range-price">KWD 1.500</p>
+              <button class="btn btn-ink" type="button" data-pick="gym" data-i18n="range.pickGym">Choose Gym</button>
+            </div>
+          </article>
+          <article class="range-item range-life">
+            <img src="img/pack-sm.jpg" width="632" height="424" loading="lazy" alt="DUOFUEL Life pack in a kraft-paper wrapper beside dates, oats, almonds and dark chocolate" data-i18n-attr="alt:range.lifeAlt">
+            <div class="range-body">
+              <h3>DUOFUEL Life</h3>
+              <p data-i18n="range.lifeFor">For busy days, walks and classes, when you are counting calories.</p>
+              <dl class="range-facts">
+                <div><dt data-i18n="f.pack">Whole pack</dt><dd>~210 kcal</dd></div>
+                <div><dt data-i18n="f.carbs">Carbohydrate</dt><dd>~25 g</dd></div>
+                <div><dt data-i18n="f.protein">Protein</dt><dd>~12 g</dd></div>
+                <div><dt data-i18n="f.creatine">Creatine monohydrate</dt><dd data-i18n="f.none">None</dd></div>
+              </dl>
+              <p class="range-price">KWD 1.250</p>
+              <button class="btn btn-ink" type="button" data-pick="life" data-i18n="range.pickLife">Choose Life</button>
+            </div>
+          </article>
+        </div>
+        <p class="fine range-fine" data-i18n="range.fine">All values are prototype targets; final values follow lab testing.</p>
+      </div>
+    </section>
+
+    <!-- ============ A TRAINING DAY (a real sequence) ============ -->
+    <section class="day" id="day" aria-labelledby="day-title">
+      <div class="wrap">
+        <h2 id="day-title" class="h2"><span class="v-gym" data-i18n="day.title">One pack, one training evening</span><span class="v-life" data-i18n="day.titleLife">One pack, one busy day</span></h2>
+        <p class="lead"><span class="v-gym" data-i18n="day.lead">A typical after-work session in Kuwait, from the gym desk to the bin.</span><span class="v-life" data-i18n="day.leadLife">A workday with a walk at the end, without reaching for something sweet.</span></p>
+        <ol class="timeline v-gym">
+          <li><time>17:30</time><h3 data-i18n="day.s1">Pick up a pack</h3><p data-i18n="day.s1t">At the gym front desk, or from your Week Pack at home.</p></li>
+          <li class="is-pre"><time>17:35</time><h3 data-i18n="day.s2">Tear and eat PRE</h3><p data-i18n="day.s2t">Tear along the line. The orange bar gives 30 g of quick carbohydrate from dates and oats.</p></li>
+          <li><time>18:15</time><h3 data-i18n="day.s3">Train</h3><p data-i18n="day.s3t">POST stays sealed in its half of the wrapper, in your bag.</p></li>
+          <li class="is-post"><time>19:20</time><h3 data-i18n="day.s4">Eat POST</h3><p data-i18n="day.s4t">20 g protein and your daily 3 g of creatine, in one bar.</p></li>
+          <li class="is-leaf"><time>19:25</time><h3 data-i18n="day.s5">Bin the wrapper</h3><p data-i18n="day.s5t">One wrapper, no box, no second wrapper.</p></li>
+        </ol>
+        <ol class="timeline v-life">
+          <li><time>07:30</time><h3 data-i18n="day.l1">Pack in your bag</h3><p data-i18n="day.l1t">Picked up with the groceries at your co-op.</p></li>
+          <li class="is-pre"><time>10:30</time><h3 data-i18n="day.l2">PRE with your coffee</h3><p data-i18n="day.l2t">95 kcal of dates and oats to carry you to lunch.</p></li>
+          <li><time>17:00</time><h3 data-i18n="day.l3">Walk, padel or a class</h3><p data-i18n="day.l3t">POST waits, sealed, in its half of the wrapper.</p></li>
+          <li class="is-post"><time>18:00</time><h3 data-i18n="day.l4">POST instead of dessert</h3><p data-i18n="day.l4t">10 g protein at about 115 kcal.</p></li>
+          <li class="is-leaf"><time>18:05</time><h3 data-i18n="day.s5">Bin the wrapper</h3><p data-i18n="day.s5t">One wrapper, no box, no second wrapper.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ INSIDE THE PACK ============ -->
+    <section class="inside" id="inside" aria-labelledby="inside-title">
+      <div class="wrap">
+        <h2 id="inside-title" class="h2"><span class="v-gym" data-i18n="inside.title">Inside the Gym pack</span><span class="v-life" data-i18n="inside.titleLife">Inside the Life pack</span></h2>
+        <div class="inside-split">
+          <article class="spec spec-pre">
+            <h3><span class="spec-tag">PRE</span> <span data-i18n="inside.preH">Before</span></h3>
+            <p data-i18n="inside.preText">Soft, chewy and quick to digest. Made from food-safe dates that were too small or too marked for the fruit shelf.</p>
+            <dl class="facts v-gym">
+              <div><dt data-i18n="f.weight">Bar weight</dt><dd>~45 g</dd></div>
+              <div><dt data-i18n="f.carbs">Carbohydrate</dt><dd>30 g</dd></div>
+              <div><dt data-i18n="f.energy">Energy</dt><dd>~170 kcal</dd></div>
+              <div><dt data-i18n="f.sugar">Added sugar</dt><dd>0 g</dd></div>
+            </dl>
+            <dl class="facts v-life">
+              <div><dt data-i18n="f.weight">Bar weight</dt><dd>~25 g</dd></div>
+              <div><dt data-i18n="f.carbs">Carbohydrate</dt><dd>15 g</dd></div>
+              <div><dt data-i18n="f.energy">Energy</dt><dd>~95 kcal</dd></div>
+              <div><dt data-i18n="f.sugar">Added sugar</dt><dd>0 g</dd></div>
+            </dl>
+            <p class="ingr"><strong data-i18n="f.ingr">Ingredients:</strong> <span data-i18n="inside.preIngr">surplus dates, rolled oats, almond butter, sea salt.</span></p>
+          </article>
+          <div class="split-line" aria-hidden="true"></div>
+          <article class="spec spec-post">
+            <h3><span class="spec-tag">POST</span> <span data-i18n="inside.postH">After</span></h3>
+            <p data-i18n="inside.postText">Dense, dark and cocoa-rich. Protein when your body asks for it, plus the creatine many lifters already take as a powder.</p>
+            <dl class="facts v-gym">
+              <div><dt data-i18n="f.weight">Bar weight</dt><dd>~60 g</dd></div>
+              <div><dt data-i18n="f.protein">Protein</dt><dd>20 g</dd></div>
+              <div><dt data-i18n="f.creatine">Creatine monohydrate</dt><dd>3 g</dd></div>
+              <div><dt data-i18n="f.energy">Energy</dt><dd>~230 kcal</dd></div>
+            </dl>
+            <dl class="facts v-life">
+              <div><dt data-i18n="f.weight">Bar weight</dt><dd>~30 g</dd></div>
+              <div><dt data-i18n="f.protein">Protein</dt><dd>10 g</dd></div>
+              <div><dt data-i18n="f.creatine">Creatine monohydrate</dt><dd data-i18n="f.none">None</dd></div>
+              <div><dt data-i18n="f.energy">Energy</dt><dd>~115 kcal</dd></div>
+            </dl>
+            <p class="ingr"><strong data-i18n="f.ingr">Ingredients:</strong> <span class="v-gym" data-i18n="inside.postIngr">whey protein, dark chocolate, almonds, creatine monohydrate.</span><span class="v-life" data-i18n="inside.postIngrLife">whey protein, dark chocolate, almonds.</span></p>
+          </article>
+        </div>
+        <p class="fine" data-i18n="inside.fine">Contains milk, oats (gluten) and almonds. Values are prototype targets; final values follow lab testing. Not a meal replacement.</p>
+      </div>
+    </section>
+
+    <!-- ============ THE DATES (sustainability) ============ -->
+    <section class="dates" id="dates" aria-labelledby="dates-title">
+      <div class="wrap dates-grid">
+        <div class="dates-copy">
+          <h2 id="dates-title" class="h2" data-i18n="dates.title">The dates in PRE were turned away for their looks</h2>
+          <p class="lead" data-i18n="dates.lead">Kuwait grows over 100,000 tonnes of dates a year. Some are too small, split or marked to sell as fruit, but they are perfectly good to eat. We buy them, blend them, and tell you exactly how much.</p>
+          <ul class="promises">
+            <li><svg class="icon" aria-hidden="true"><use href="#i-leaf"/></svg><div><h3 data-i18n="dates.p1">Rescued dates</h3><p data-i18n="dates.p1t">We report the kilograms of surplus dates used per 1,000 packs.</p></div></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-scale"/></svg><div><h3 data-i18n="dates.p2">One wrapper, no box</h3><p data-i18n="dates.p2t">We report the grams of packaging per pack, compared with two single bars.</p></div></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-qr"/></svg><div><h3 data-i18n="dates.p3">Proof on every pack</h3><p data-i18n="dates.p3t">The QR code shows the batch, where the dates came from and the packaging weight.</p></div></li>
+          </ul>
+          <p class="facts-strip"><span><strong>102,213 t</strong> <span data-i18n="dates.f1">dates grown in Kuwait in 2024</span></span><span><strong>98.6 kg</strong> <span data-i18n="dates.f2">household food waste per person a year in Kuwait</span></span></p>
+          <p class="src" data-i18n="dates.src">Sources: FAOSTAT via Helgi Library (2026); UNEP Food Waste Index 2024.</p>
+        </div>
+
+        <form class="batch" data-batch novalidate aria-labelledby="batch-title">
+          <h3 id="batch-title" data-i18n="batch.title">Check your batch</h3>
+          <p data-i18n="batch.help">Type the code printed next to the tear line, or try the sample code.</p>
+          <label class="field-label" for="batch-code" data-i18n="batch.label">Batch code</label>
+          <div class="batch-row">
+            <input id="batch-code" name="code" type="text" autocomplete="off" spellcheck="false" placeholder="DF-2611-03" inputmode="text" aria-describedby="batch-error">
+            <button class="btn btn-leaf" type="submit" data-i18n="batch.go">Check batch</button>
+          </div>
+          <button class="link-btn" type="button" data-batch-sample data-i18n="batch.sample">Use the sample code DF-2611-03</button>
+          <p class="error" id="batch-error" role="alert" hidden></p>
+          <div class="batch-result" data-batch-result hidden aria-live="polite"></div>
+        </form>
+      </div>
+    </section>
+
+    <!-- ============ PRICES + ORDER ============ -->
+    <section class="order" id="order" aria-labelledby="order-title">
+      <div class="wrap order-grid">
+        <div>
+          <h2 id="order-title" class="h2" data-i18n="order.title">Both moments for less than two bars</h2>
+          <p class="lead" data-i18n="order.lead">A date bar and a protein bar bought separately cost about KWD 2.026 on Kuwaiti shelves. DUOFUEL covers both moments for less.</p>
+          <ul class="price-list">
+            <li><span class="pl-name">DUOFUEL Gym</span><span class="pl-note" data-i18n="plan.gymNote">One pack, both bars</span><span class="pl-price">KWD 1.500</span></li>
+            <li><span class="pl-name">DUOFUEL Life</span><span class="pl-note" data-i18n="plan.lifeNote">One lighter pack, both bars</span><span class="pl-price">KWD 1.250</span></li>
+            <li><span class="pl-name" data-i18n="plan.gymWeek">Gym Week Pack, monthly</span><span class="pl-note" data-i18n="plan.weekNote">5 packs every month · save 10%</span><span class="pl-price">KWD 6.750</span></li>
+            <li><span class="pl-name" data-i18n="plan.lifeWeek">Life Week Pack, monthly</span><span class="pl-note" data-i18n="plan.weekNote">5 packs every month · save 10%</span><span class="pl-price">KWD 5.625</span></li>
+          </ul>
+        </div>
+
+        <form class="order-form" data-order novalidate aria-labelledby="form-title">
+          <h3 id="form-title" data-i18n="form.title">Order</h3>
+          <fieldset>
+            <legend data-i18n="form.plan">Choose</legend>
+            <label class="choice"><input type="radio" name="plan" value="gym" checked> <span>DUOFUEL Gym</span> <bdi class="choice-price">KWD 1.500</bdi></label>
+            <label class="choice"><input type="radio" name="plan" value="life"> <span>DUOFUEL Life</span> <bdi class="choice-price">KWD 1.250</bdi></label>
+            <label class="choice"><input type="radio" name="plan" value="gymWeek"> <span data-i18n="plan.gymWeek">Gym Week Pack, monthly</span> <bdi class="choice-price">KWD 6.750</bdi></label>
+            <label class="choice"><input type="radio" name="plan" value="lifeWeek"> <span data-i18n="plan.lifeWeek">Life Week Pack, monthly</span> <bdi class="choice-price">KWD 5.625</bdi></label>
+          </fieldset>
+          <div class="qty-row">
+            <span class="field-label" id="qty-label" data-i18n="form.qty">Quantity</span>
+            <div class="stepper" role="group" aria-labelledby="qty-label">
+              <button type="button" data-step="-1" aria-label="Fewer" data-i18n-attr="aria-label:form.less"><svg class="icon" aria-hidden="true"><use href="#i-minus"/></svg></button>
+              <output data-qty aria-live="polite">1</output>
+              <button type="button" data-step="1" aria-label="More" data-i18n-attr="aria-label:form.more"><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></button>
+            </div>
+          </div>
+          <label class="field-label" for="pickup" data-i18n="form.where">Pick up or delivery</label>
+          <select id="pickup" name="pickup">
+            <option value="gym" data-i18n="form.optGym">Pick up at my gym desk</option>
+            <option value="coop" data-i18n="form.optCoop">Pick up at my co-op</option>
+            <option value="home" data-i18n="form.optHome">Delivery in Kuwait (+ KWD 0.500)</option>
+          </select>
+          <p class="total"><span data-i18n="form.total">Total</span> <bdi data-total>KWD 1.500</bdi></p>
+          <button class="btn btn-pre btn-wide" type="submit" data-i18n="form.submit">Place demo order</button>
+          <p class="fine" data-i18n="form.fine">Demo only: nothing is charged or sent anywhere.</p>
+          <div class="order-done" data-done hidden tabindex="-1">
+            <svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>
+            <p data-done-text></p>
+            <button class="link-btn" type="button" data-again data-i18n="form.again">Start a new order</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- ============ WHERE TO BUY ============ -->
+    <section class="where" id="where" aria-labelledby="where-title">
+      <div class="wrap">
+        <h2 id="where-title" class="h2" data-i18n="where.title">Where the two moments happen</h2>
+        <ul class="where-list">
+          <li><svg class="icon" aria-hidden="true"><use href="#i-gym"/></svg><h3 data-i18n="where.gym">Gym front desks</h3><p data-i18n="where.gymT">On the counter where you check in, so PRE is in your hand before you warm up.</p></li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-store"/></svg><h3 data-i18n="where.coop">Co-op supermarkets and pharmacies</h3><p data-i18n="where.coopT">In the sports-nutrition aisle of your area's co-operative society.</p></li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg><h3 data-i18n="where.app">Delivery apps</h3><p data-i18n="where.appT">Order singles or your Gym Week Pack and get them the same day.</p></li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-campus"/></svg><h3 data-i18n="where.campus">University campuses</h3><p data-i18n="where.campusT">Campus stores and sports clubs, with student team ambassadors.</p></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ WHAT'S NEXT ============ -->
+    <section class="next" id="next" aria-labelledby="next-title">
+      <div class="wrap next-grid">
+        <div>
+          <h2 id="next-title" class="h2" data-i18n="next.title">What's next</h2>
+          <p class="lead" data-i18n="next.lead">After launch, you choose the next flavours, and we make every pack for people with allergies too.</p>
+          <form class="vote" data-vote aria-labelledby="vote-title">
+            <h3 id="vote-title" data-i18n="vote.title">Vote for the next flavour</h3>
+            <label class="vote-opt"><input type="radio" name="flavour" value="cardamom"> <span data-i18n="vote.f1">Date &amp; cardamom (PRE)</span><bdi class="vote-n" data-n="cardamom"></bdi></label>
+            <label class="vote-opt"><input type="radio" name="flavour" value="coffee"> <span data-i18n="vote.f2">Chocolate &amp; Arabic coffee (POST)</span><bdi class="vote-n" data-n="coffee"></bdi></label>
+            <label class="vote-opt"><input type="radio" name="flavour" value="saffron"> <span data-i18n="vote.f3">Date &amp; saffron (PRE)</span><bdi class="vote-n" data-n="saffron"></bdi></label>
+            <label class="vote-opt"><input type="radio" name="flavour" value="vanilla"> <span data-i18n="vote.f4">Vanilla &amp; date caramel (POST)</span><bdi class="vote-n" data-n="vanilla"></bdi></label>
+            <button class="btn btn-ink" type="submit" data-i18n="vote.go">Send my vote</button>
+            <p class="fine" data-vote-msg role="status"></p>
+          </form>
+        </div>
+        <div>
+          <h3 class="ff-title" data-i18n="ff.title">Free-from packs, in the plan for year 2–3</h3>
+          <ul class="ff-list">
+            <li><span class="ff-name" data-i18n="ff.g">Gluten-free</span><span class="ff-swap"><span data-i18n="ff.gOut">Regular oats</span><span class="ff-arrow" aria-hidden="true"></span><span data-i18n="ff.gIn">certified gluten-free oats or puffed rice</span></span></li>
+            <li><span class="ff-name" data-i18n="ff.l">Lactose-free</span><span class="ff-swap"><span data-i18n="ff.lOut">Whey protein</span><span class="ff-arrow" aria-hidden="true"></span><span data-i18n="ff.lIn">pea and rice protein</span></span></li>
+            <li><span class="ff-name" data-i18n="ff.n">Nut-free</span><span class="ff-swap"><span data-i18n="ff.nOut">Almonds</span><span class="ff-arrow" aria-hidden="true"></span><span data-i18n="ff.nIn">sunflower-seed butter and pumpkin seeds</span></span></li>
+          </ul>
+          <p class="fine" data-i18n="ff.rule">No pack says “free-from” until it is made on a separate, cleaned line and every batch passes lab tests for gluten, milk and nuts.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="faq" id="faq" aria-labelledby="faq-title">
+      <div class="wrap faq-wrap">
+        <h2 id="faq-title" class="h2" data-i18n="faq.title">Questions</h2>
+        <div class="faq-list">
+          <details><summary data-i18n="faq.q1">Can I eat both bars at once?</summary><p data-i18n="faq.a1">Yes. Together they are a balanced snack of about 100 g with carbohydrate and protein. The split is a convenience, not a rule.</p></details>
+          <details><summary data-i18n="faq.q2">Is 3 g of creatine a day safe?</summary><p data-i18n="faq.a2">The International Society of Sports Nutrition calls 3–5 g a day effective and finds no compelling evidence of harm in healthy adults. If you have a medical condition, ask your doctor first.</p></details>
+          <details><summary data-i18n="faq.q3">Does creatine work better after training?</summary><p data-i18n="faq.a3">We don't claim that. Taking it every day matters more than the hour. It sits in POST because that is when most people already have their protein.</p></details>
+          <details><summary data-i18n="faq.q4">Why a paper wrapper?</summary><p data-i18n="faq.a4">One wrapper with two sealed compartments uses less material than two separately wrapped bars, and needs no box.</p></details>
+          <details><summary data-i18n="faq.q6">I have an allergy. Can I eat DUOFUEL?</summary><p data-i18n="faq.a6">Not yet: both packs contain milk, oats (gluten) and almonds, and the label says so. Gluten-free, lactose-free and nut-free versions are planned for year 2–3.</p></details>
+          <details><summary data-i18n="faq.q5">Are surplus dates lower quality?</summary><p data-i18n="faq.a5">Only in looks. They pass the same food-safety tests as any date we use; they were just too small or marked for the fruit shelf.</p></details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-row">
+      <div>
+        <p class="wordmark wordmark-lg" aria-hidden="true"><span class="wm-duo">DUO</span><span class="wm-fuel">FUEL</span></p>
+        <p class="footer-sign" data-i18n="foot.sign">Two stages. One goal.</p>
+      </div>
+      <div class="footer-meta">
+        <p class="disclaimer" data-i18n="foot.demo">DUOFUEL is a concept product created for a university marketing project. It is not on sale: prices, batches and orders on this page are for demonstration only.</p>
+        <p class="credit"><a href="campaign/" data-i18n="foot.campaign">See the “Two Moments” campaign kit</a></p>
+        <p class="credit"><span data-i18n="foot.credit">Designed and built by</span> <bdi><a href="../../">Q8Pixel</a></bdi></p>
+      </div>
+    </div>
+  </footer>
+
+  <a class="concept-badge" href="../../" aria-label="Concept project by Q8Pixel — visit Q8Pixel" data-i18n-attr="aria-label:badge.aria"><span class="badge-pixel" aria-hidden="true"></span><span data-i18n="badge.text">Concept project by Q8Pixel</span></a>
+</body>
+</html>
