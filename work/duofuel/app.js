@@ -226,7 +226,7 @@
 
   /* The survey is a Google Form. Paste its embed link here (the src="..." from Send → <> in Google Forms);
      until then the section shows a "opens soon" note. */
-  var FORM_URL = '';
+  var FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSf7wL15rMqIlyYaSFuC92vv39-qW91BKxfSuQhWiJV60y0jxw/viewform?embedded=true';
   var t = function () { return T[lang]; };
 
   function applyLang(l) {
