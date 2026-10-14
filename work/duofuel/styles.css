@@ -442,3 +442,5 @@ html[dir="rtl"] .kw-flag { direction: ltr; }
 .survey-wait { align-self: center; justify-self: center; text-align: center; font-weight: 700; color: var(--ink-2); max-width: 32ch; padding: 30px; }
 .survey-iframe { width: 100%; height: 1500px; border: 0; border-radius: 12px; background: #fff; }
 @media (min-width: 980px) { .survey-grid { grid-template-columns: .8fr 1.2fr; gap: 64px; } .survey-copy { position: sticky; top: calc(var(--header-h) + 24px); } }
+/* v7 pack shot is a wide banner: show it whole */
+.range-item img { aspect-ratio: auto; height: auto; object-fit: contain; background: #e9d0bc; }
