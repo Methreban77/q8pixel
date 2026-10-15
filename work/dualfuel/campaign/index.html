@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DUAL FUEL “Two Moments” campaign kit · Concept by Q8Pixel</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Noto+Kufi+Arabic:wght@400..900&display=swap">
+  <style>
+    :root {
+      --kraft: #c8a378; --kraft-l: #e4cda9; --paper: #f3e3c8; --ink: #2b1b12; --ink-2: #5b4231;
+      --pre: #e4561d; --post: #1f46b5; --leaf: #2e7d4f; --date: #3a1f14; --black: #141312;
+      --g-pre: linear-gradient(100deg, #ff6a13, #ffb41f); --g-post: linear-gradient(100deg, #20b9e8, #1f62ff);
+      --fibre: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .32 0 0 0 0 .2 0 0 0 0 .1 0 0 0 .5 0'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");
+      --display: "Archivo", sans-serif; --body: "Archivo", system-ui, sans-serif;
+    }
+    html[lang="ar"] { --display: "Noto Kufi Arabic", sans-serif; --body: "Noto Kufi Arabic", sans-serif; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #2a2622; color: #f3e3c8; font-family: var(--body); }
+    a { color: inherit; }
+    .page-head { max-width: 1180px; margin: 0 auto; padding: 32px 20px 8px; display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px; }
+    .page-head h1 { margin: 0; font: 900 clamp(30px, 5vw, 48px)/1 "Archivo", sans-serif; font-stretch: 70%; }
+    html[lang="ar"] .page-head h1 { font-family: "Noto Kufi Arabic", sans-serif; font-size: clamp(24px, 4vw, 36px); line-height: 1.4; }
+    .page-head p { margin: 8px 0 0; color: #cdbba0; max-width: 60ch; }
+    .tools { display: flex; gap: 10px; }
+    .tools a, .tools button { min-height: 42px; padding: 0 16px; border-radius: 999px; border: 2px solid #f3e3c8; background: transparent; color: #f3e3c8; font: 700 14.5px var(--body); cursor: pointer; display: inline-flex; align-items: center; text-decoration: none; }
+    .board { max-width: 1180px; margin: 0 auto; padding: 24px 20px 80px; display: grid; gap: 36px; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); }
+    .item { margin: 0; }
+    .item.wide { grid-column: 1 / -1; }
+    .frame { position: relative; width: 100%; overflow: hidden; border-radius: 6px; box-shadow: 0 20px 40px -20px rgba(0,0,0,.8); }
+    .frame > .ab { position: absolute; top: 0; left: 0; transform-origin: 0 0; }
+    .item figcaption { margin-top: 10px; font-size: 14px; color: #cdbba0; display: flex; justify-content: space-between; gap: 12px; }
+    .item figcaption strong { color: #f3e3c8; }
+    .item figcaption a { font-weight: 700; }
+    /* export mode: one artboard at 1:1 */
+    body.export { background: transparent; }
+    body.export .page-head, body.export .item figcaption { display: none; }
+    body.export .board { display: block; max-width: none; padding: 0; margin: 0; }
+    body.export .item:not(.is-export) { display: none; }
+    body.export .frame { width: auto !important; height: auto !important; padding: 0 !important; border-radius: 0; box-shadow: none; overflow: visible; }
+    body.export .frame > .ab { position: relative; transform: none !important; }
+
+    /* ---------- artboards ---------- */
+    .ab { overflow: hidden; color: var(--ink); font-family: var(--body); direction: inherit; }
+    .ab .cond { font-family: var(--display); font-weight: 900; font-stretch: 62%; line-height: .86; text-transform: uppercase; letter-spacing: -.005em; }
+    html[lang="ar"] .ab .cond { text-transform: none; line-height: 1.2; font-stretch: normal; }
+    .wm { display: inline-flex; direction: ltr; font: 900 1em/1 "Archivo", sans-serif; font-stretch: 62%; }
+    .wm b { color: var(--pre); font-weight: 900; }
+    .perf { background: repeating-linear-gradient(to right, currentColor 0 22px, transparent 22px 38px); height: 7px; }
+    .perf-v { background: repeating-linear-gradient(to bottom, currentColor 0 22px, transparent 22px 38px); width: 7px; }
+    .knob { width: 120px; height: 120px; border-radius: 50%; display: grid; place-items: center; }
+    .knob svg { width: 58px; height: 58px; }
+    .price { font: 900 1em/1 "Archivo", sans-serif; font-stretch: 70%; direction: ltr; unicode-bidi: isolate; }
+
+    /* 1. Instagram — Gym */
+    .ab-ig-gym { width: 1080px; height: 1080px; background: var(--black); color: #fff; display: grid; grid-template-rows: 1fr 7px 1fr; }
+    .ab-ig-gym .half { position: relative; padding: 84px 84px 0; }
+    .ab-ig-gym .top { background: var(--g-pre); color: var(--black); }
+    .ab-ig-gym .bot { background: var(--g-post); color: var(--black); padding-top: 70px; }
+    .ab-ig-gym .cond { font-size: 238px; }
+    html[lang="ar"] .ab-ig-gym .cond { font-size: 190px; }
+    .ab-ig-gym .perf { color: #ffb41f; background-color: var(--black); }
+    .ab-ig-gym .knob { position: absolute; inset-inline-end: 84px; top: -60px; background: #fff; color: var(--black); z-index: 2; }
+    .ab-ig-gym .tag { position: absolute; inset-inline: 84px; bottom: 64px; display: flex; justify-content: space-between; align-items: baseline; font-size: 40px; font-weight: 800; }
+    .ab-ig-gym .tag .wm { font-size: 64px; color: var(--black); }
+    .ab-ig-gym .tag .wm b { color: #fff; }
+
+    /* 2. Instagram — Life */
+    .ab-ig-life { width: 1080px; height: 1080px; background: var(--kraft) var(--fibre); display: grid; grid-template-rows: 610px 1fr; }
+    .ab-ig-life img { width: 100%; height: 610px; object-fit: cover; display: block; }
+    .ab-ig-life .copy { padding: 54px 84px 0; position: relative; }
+    .ab-ig-life .cond { font-size: 150px; color: var(--ink); }
+    html[lang="ar"] .ab-ig-life .cond { font-size: 104px; }
+    .ab-ig-life p { margin: 22px 0 0; font-size: 34px; font-weight: 600; line-height: 1.35; max-width: 26ch; color: var(--ink-2); }
+    .ab-ig-life .corner { position: absolute; inset-inline-end: 84px; top: 60px; text-align: end; }
+    .ab-ig-life .corner .price { font-size: 76px; color: var(--leaf); }
+    .ab-ig-life .corner .wm { font-size: 44px; margin-top: 10px; }
+
+    /* 3. Story */
+    .ab-story { width: 1080px; height: 1920px; background: var(--black); color: #fff; display: grid; grid-template-rows: 760px 1fr; }
+    .ab-story img { width: 100%; height: 760px; object-fit: cover; object-position: 60% 50%; display: block; }
+    .ab-story .steps { padding: 70px 90px 0; display: grid; gap: 6px; align-content: start; }
+    .ab-story .cond { font-size: 196px; }
+    html[lang="ar"] .ab-story .cond { font-size: 150px; }
+    .ab-story .s1 { color: #fff; } .ab-story .s2 { color: #ff8a1f; } .ab-story .s3 { color: #fff; } .ab-story .s4 { color: #3aa5ff; }
+    .ab-story .foot { position: absolute; inset-inline: 90px; bottom: 90px; }
+    .ab-story .foot .perf { color: #ffb41f; margin-bottom: 40px; }
+    .ab-story .foot p { margin: 0; font-size: 42px; font-weight: 700; display: flex; justify-content: space-between; gap: 20px; }
+    .ab-story .foot .wm { font-size: 70px; } .ab-story .foot .wm b { color: #ff8a1f; }
+    .ab-story { position: relative; }
+
+    /* 4. Gym front-desk poster (A3 ratio) */
+    .ab-poster { width: 1240px; height: 1754px; background: var(--kraft) var(--fibre); position: relative; padding: 110px 110px 0; }
+    .ab-poster .cond { font-size: 250px; color: var(--ink); }
+    html[lang="ar"] .ab-poster .cond { font-size: 170px; }
+    .ab-poster .lede { margin: 34px 0 0; font-size: 44px; font-weight: 700; max-width: 22ch; color: var(--ink-2); line-height: 1.3; }
+    .ab-poster .cut { position: absolute; inset-inline: 0; top: 1010px; display: flex; align-items: center; gap: 28px; color: var(--ink); padding-inline: 60px; }
+    .ab-poster .cut .perf { flex: 1; }
+    .ab-poster .cut .knob { background: var(--ink); color: var(--paper); flex: none; }
+    .ab-poster .cut span { font-size: 36px; font-weight: 800; flex: none; }
+    .ab-poster .halves { position: absolute; inset-inline: 110px; top: 1140px; display: grid; grid-template-columns: 1fr 1fr; gap: 44px; }
+    .ab-poster .h { padding: 44px; border-radius: 10px; color: #fff; }
+    .ab-poster .h.pre { background: var(--pre); } .ab-poster .h.post { background: var(--post); }
+    .ab-poster .h .cond { font-size: 150px; color: #fff; }
+    html[lang="ar"] .ab-poster .h .cond { line-height: .9; }
+    .ab-poster .h p { margin: 14px 0 0; font-size: 34px; font-weight: 700; line-height: 1.3; }
+    .ab-poster .bottom { position: absolute; inset-inline: 110px; bottom: 96px; display: flex; justify-content: space-between; align-items: flex-end; gap: 30px; }
+    .ab-poster .bottom .wm { font-size: 96px; }
+    .ab-poster .bottom .prices { font-size: 38px; font-weight: 700; line-height: 1.45; text-align: end; }
+    .ab-poster .bottom .price { font-size: 46px; }
+
+    /* 5. Dates (sustainability) */
+    .ab-dates { width: 1080px; height: 1080px; background: var(--date); color: var(--paper); position: relative; padding: 96px 90px; }
+    .ab-dates .cond { font-size: 150px; color: var(--paper); max-width: 8.5ch; }
+    html[lang="ar"] .ab-dates .cond { font-size: 98px; max-width: 12ch; }
+    .ab-dates p { margin: 40px 0 0; font-size: 36px; line-height: 1.4; max-width: 28ch; color: #d9c3a3; }
+    .ab-dates p strong { color: var(--paper); }
+    .ab-dates .fruit { position: absolute; inset-inline-end: 70px; top: 120px; width: 300px; }
+    .ab-dates .foot { position: absolute; inset-inline: 90px; bottom: 84px; display: flex; justify-content: space-between; align-items: baseline; font-size: 26px; color: #bfa684; }
+    .ab-dates .foot .wm { font-size: 60px; color: var(--paper); }
+
+    /* 6. Co-op shelf talker */
+    .ab-shelf { width: 1800px; height: 600px; display: grid; grid-template-columns: 1fr 7px 1fr; background: var(--kraft) var(--fibre); position: relative; }
+    .ab-shelf .side { padding: 70px 90px; color: #fff; position: relative; }
+    .ab-shelf .l { background: var(--pre); } .ab-shelf .r { background: var(--post); }
+    .ab-shelf .perf-v { color: var(--ink); background-color: var(--kraft-l); }
+    .ab-shelf .cond { font-size: 170px; }
+    html[lang="ar"] .ab-shelf .cond { font-size: 118px; }
+    .ab-shelf .side p { margin: 20px 0 0; font-size: 36px; font-weight: 700; }
+    .ab-shelf .r .price { font-size: 190px; }
+    .ab-shelf .r .sub { font-size: 30px; font-weight: 700; opacity: .9; }
+    .ab-shelf .knob { position: absolute; left: calc(50% - 60px); top: calc(50% - 60px); background: var(--ink); color: var(--paper); z-index: 2; }
+    .ab-shelf .wmtag { position: absolute; inset-inline-start: 90px; bottom: 54px; font-size: 54px; }
+    .ab-shelf .wmtag .wm b { color: var(--ink); }
+    .ab-poster .made { margin: 12px 0 0; font-size: 30px; font-weight: 700; color: var(--ink-2); }
+    .ab-shelf .r .sub + .sub { margin-top: 6px; }
+    /* fit fixes after the first export */
+    .ab-ig-gym .cond { font-size: 196px; }
+    html[lang="ar"] .ab-ig-gym .cond { font-size: 138px; line-height: 1.15; }
+    .ab-ig-gym .half { padding-top: 70px; }
+    .ab-ig-gym .bot { padding-top: 60px; }
+    .ab-ig-gym .tag { bottom: 48px; font-size: 36px; }
+    .ab-ig-gym .tag .wm { font-size: 56px; }
+    .ab-ig-life .cond { font-size: 128px; }
+    html[lang="ar"] .ab-ig-life .cond { font-size: 92px; }
+    .ab-ig-life p { max-width: 19ch; font-size: 32px; }
+    .ab-ig-life .corner { top: auto; bottom: 64px; }
+    .ab-dates .cond { font-size: 118px; max-width: 620px; }
+    html[lang="ar"] .ab-dates .cond { font-size: 92px; max-width: 640px; }
+  </style>
+</head>
+<body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="sc" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.1 15.9M14.5 14.5 20 20M8.1 8.1 12 12"/></g></symbol>
+  </svg>
+
+  <header class="page-head">
+    <div>
+      <h1 data-ar="حملة «لحظتين»">The “Two Moments” campaign</h1>
+      <p data-ar="ست تصاميم جاهزة للنشر لعلبتي جيم ولايف: منشورين انستغرام، ستوري، بوستر لمكتب النادي، منشور عن التمر، وبطاقة رف للجمعية.">Six ready-to-post designs for the Gym and Life packs: two Instagram posts, a story, a gym front-desk poster, a post about the dates and a co-op shelf card.</p>
+    </div>
+    <div class="tools">
+      <button type="button" id="lang">عربي</button>
+      <a href="../" data-ar="العودة للموقع">Back to the site</a>
+    </div>
+  </header>
+
+  <main class="board">
+    <!-- 1 -->
+    <figure class="item" data-ab="ig-gym">
+      <div class="frame"><div class="ab ab-ig-gym" style="--w:1080;--h:1080">
+        <div class="half top"><div class="cond" data-ar="طاقة<br>قبل.">Fuel<br>before.</div></div>
+        <div class="perf"></div>
+        <div class="half bot">
+          <span class="knob"><svg><use href="#sc"/></svg></span>
+          <div class="cond" data-ar="وتعويض<br>بعد.">Refuel<br>after.</div>
+          <div class="tag"><span class="wm">DUAL&nbsp;<b>FUEL</b>&nbsp;GYM</span><span class="price">KWD 1.500</span></div>
+        </div>
+      </div></div>
+      <figcaption><span><strong>Instagram · Gym</strong> 1080 × 1080</span><a href="png/ig-gym-en.png" download data-dl="ig-gym">PNG</a></figcaption>
+    </figure>
+    <!-- 2 -->
+    <figure class="item" data-ab="ig-life">
+      <div class="frame"><div class="ab ab-ig-life" style="--w:1080;--h:1080">
+        <img src="../img/pack-2togo.jpg" alt="" style="object-position:50% 50%">
+        <div class="copy">
+          <div class="cond" data-ar="لقمتين.<br>210 سعرة.">Two bites.<br>210 kcal.</div>
+          <p data-ar="لوح تمر بالقهوة قبل، ولوح كاكاو فيه 10 غ بروتين بعد.">A coffee date crunch before, a 10 g protein cocoa crunch after.</p>
+          <div class="corner"><div class="price">KWD 1.250</div><div class="wm">DUAL&nbsp;<b>FUEL</b>&nbsp;LIFE</div></div>
+        </div>
+      </div></div>
+      <figcaption><span><strong>Instagram · Life</strong> 1080 × 1080</span><a href="png/ig-life-en.png" download data-dl="ig-life">PNG</a></figcaption>
+    </figure>
+    <!-- 5 -->
+    <figure class="item" data-ab="dates">
+      <div class="frame"><div class="ab ab-dates" style="--w:1080;--h:1080">
+        <div class="cond" data-ar="هذا التمر انرفض بسبب شكله.">These dates were turned away for their looks.</div>
+        <p data-ar="الكويت زرعت <strong>102,213 طن</strong> تمر في 2024. الصغير والمعلّم منه ما يوصل الرف، فنحطه في PRE.">Kuwait grew <strong>102,213 t</strong> of dates in 2024. The small and marked ones never reach the shelf, so we put them in PRE.</p>
+        <svg class="fruit" viewBox="0 0 300 300" aria-hidden="true">
+          <g transform="rotate(-24 150 150)"><ellipse cx="110" cy="120" rx="58" ry="96" fill="#7a3416"/><ellipse cx="96" cy="96" rx="16" ry="40" fill="#a3542a" opacity=".55"/></g>
+          <g transform="rotate(18 150 150)"><ellipse cx="200" cy="170" rx="54" ry="90" fill="#5e2710"/><ellipse cx="188" cy="146" rx="14" ry="36" fill="#8b4520" opacity=".55"/><path d="M180 112 l14 22 -10 18" stroke="#3a1608" stroke-width="5" fill="none" stroke-linecap="round"/></g>
+        </svg>
+        <div class="foot"><span data-ar="المصدر: FAOSTAT 2024">Source: FAOSTAT 2024</span><span class="wm">DUAL&nbsp;<b>FUEL</b></span></div>
+      </div></div>
+      <figcaption><span><strong data-ar="منشور · التمر">Instagram · The dates</strong> 1080 × 1080</span><a href="png/dates-en.png" download data-dl="dates">PNG</a></figcaption>
+    </figure>
+    <!-- 3 -->
+    <figure class="item" data-ab="story">
+      <div class="frame"><div class="ab ab-story" style="--w:1080;--h:1920">
+        <img src="../img/pack-gym.jpg" alt="">
+        <div class="steps">
+          <div class="cond s1" data-ar="اقطع.">Tear.</div>
+          <div class="cond s2" data-ar="كُل PRE.">Eat PRE.</div>
+          <div class="cond s3" data-ar="تمرّن.">Train.</div>
+          <div class="cond s4" data-ar="كُل POST.">Refuel.</div>
+        </div>
+        <div class="foot"><div class="perf"></div><p><span class="wm">DUAL&nbsp;<b>FUEL</b></span><span data-ar="في مكتب النادي">At your gym desk</span></p></div>
+      </div></div>
+      <figcaption><span><strong>Story</strong> 1080 × 1920</span><a href="png/story-en.png" download data-dl="story">PNG</a></figcaption>
+    </figure>
+    <!-- 4 -->
+    <figure class="item" data-ab="poster">
+      <div class="frame"><div class="ab ab-poster" style="--w:1240;--h:1754">
+        <div class="cond" data-ar="تمرينك بعد نص ساعة؟">Training in 30 minutes?</div>
+        <p class="lede" data-ar="اقطع العلبة الحين. البرتقالي لك الحين، والأزرق لبعد التمرين.">Tear a pack now. The orange bar is for now, the blue one for after.</p>
+        <div class="cut"><div class="perf"></div><span class="knob"><svg><use href="#sc"/></svg></span><span data-ar="اقطع هنا">Tear here</span><div class="perf"></div></div>
+        <div class="halves">
+          <div class="h pre"><div class="cond">PRE</div><p data-ar="تمر بالقهوة<br>قبل التمرين">Coffee date crunch<br>before you train</p></div>
+          <div class="h post"><div class="cond">POST</div><p data-ar="كاكاو وبروتين<br>بعد التمرين">Cocoa protein crunch<br>after you train</p></div>
+        </div>
+        <div class="bottom"><div><span class="wm">DUAL&nbsp;<b>FUEL</b></span><p class="made" data-ar="صُنع في الكويت، من تمر كويتي">Made in Kuwait, with Kuwaiti dates</p></div><div class="prices"><div><span data-ar="جيم">Gym</span> <span class="price">KWD 1.500</span></div><div><span data-ar="لايف">Life</span> <span class="price">KWD 1.250</span></div></div></div>
+      </div></div>
+      <figcaption><span><strong data-ar="بوستر مكتب النادي">Gym desk poster</strong> A3</span><a href="png/poster-en.png" download data-dl="poster">PNG</a></figcaption>
+    </figure>
+    <!-- 6 -->
+    <figure class="item wide" data-ab="shelf">
+      <div class="frame"><div class="ab ab-shelf" style="--w:1800;--h:600">
+        <div class="side l"><div class="cond" data-ar="لوحين.<br>علبة وحدة.">Two bars.<br>One pack.</div><div class="wmtag"><span class="wm">DUAL&nbsp;<b>FUEL</b></span></div></div>
+        <div class="perf-v"></div>
+        <div class="side r"><div class="price">1.500</div><p data-ar="د.ك · أقل من سعر لوحين منفصلين (2.026 د.ك تقريباً)">KWD · less than two separate bars (about KWD 2.026)</p><p class="sub" data-ar="لايف 1.250 د.ك">Life KWD 1.250</p><p class="sub" data-ar="صُنع في الكويت، من تمر كويتي">Made in Kuwait, with Kuwaiti dates</p></div>
+        <span class="knob"><svg><use href="#sc"/></svg></span>
+      </div></div>
+      <figcaption><span><strong data-ar="بطاقة رف الجمعية">Co-op shelf card</strong> 1800 × 600</span><a href="png/shelf-en.png" download data-dl="shelf">PNG</a></figcaption>
+    </figure>
+  </main>
+
+  <script>
+    (function () {
+      var html = document.documentElement, q = new URLSearchParams(location.search);
+      var lang = q.get('lang') === 'ar' ? 'ar' : (function () { try { return localStorage.getItem('duofuel-lang') === 'ar' ? 'ar' : 'en'; } catch (e) { return 'en'; } })();
+      var en = new Map();
+      function apply(l) {
+        lang = l; html.lang = l; html.dir = l === 'ar' ? 'rtl' : 'ltr';
+        document.querySelectorAll('[data-ar]').forEach(function (el) {
+          if (!en.has(el)) en.set(el, el.innerHTML);
+          el.innerHTML = l === 'ar' ? el.getAttribute('data-ar') : en.get(el);
+        });
+        document.getElementById('lang').textContent = l === 'ar' ? 'English' : 'عربي';
+        document.querySelectorAll('[data-dl]').forEach(function (a) { a.href = 'png/' + a.getAttribute('data-dl') + '-' + l + '.png'; });
+      }
+      document.getElementById('lang').addEventListener('click', function () { apply(lang === 'ar' ? 'en' : 'ar'); });
+      // scale each artboard to its frame
+      function fit() {
+        document.querySelectorAll('.frame').forEach(function (f) {
+          var ab = f.firstElementChild, w = +getComputedStyle(ab).getPropertyValue('--w'), h = +getComputedStyle(ab).getPropertyValue('--h');
+          if (document.body.classList.contains('export')) return;
+          f.style.height = (f.clientWidth * h / w) + 'px';
+          ab.style.transform = 'scale(' + (f.clientWidth / w) + ')';
+        });
+      }
+      var ex = q.get('export');
+      if (ex) {
+        document.body.classList.add('export');
+        var it = document.querySelector('[data-ab="' + ex + '"]'); if (it) it.classList.add('is-export');
+      }
+      apply(lang); fit();
+      addEventListener('resize', fit);
+    })();
+  </script>
+</body>
+</html>

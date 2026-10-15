@@ -1,4 +1,4 @@
-/* DUOFUEL — concept product site by Q8Pixel.
+/* DUAL FUEL — concept product site by Q8Pixel.
    The page is the wrapper: kraft paper, an orange PRE half, a blue POST half and a perforated tear line.
    Mobile-first, RTL-ready (logical properties): in Arabic the PRE half reads first, on the right. */
 
@@ -276,6 +276,7 @@ legend { font-weight: 700; font-size: 14.5px; margin-bottom: 6px; padding: 0; }
 .choice:has(input:checked) { border-color: var(--pre); background: #fff3ea; }
 .choice input { width: 20px; height: 20px; accent-color: var(--pre); margin: 0; }
 .choice-price { margin-inline-start: auto; font-weight: 800; font-variant-numeric: tabular-nums; }
+@media (max-width: 400px) { .choice { gap: 7px; padding-inline: 10px; } } /* keeps "DUAL FUEL Gym  KWD 1.500" on one line at 360px */
 .qty-row { display: flex; align-items: center; justify-content: space-between; margin-top: 8px; }
 .qty-row .field-label { margin: 0; }
 .stepper { display: inline-flex; align-items: center; gap: 4px; margin-top: 14px; }

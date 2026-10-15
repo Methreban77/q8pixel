@@ -1,4 +1,4 @@
-/* DUOFUEL — concept product site by Q8Pixel.
+/* DUAL FUEL — concept product site by Q8Pixel.
    Vanilla JS: English/Arabic (RTL), the Gym/Life pack switch, the tear-open pack,
    a demo batch lookup and a demo order form. Nothing is ever sent anywhere. */
 (function () {
@@ -17,7 +17,7 @@
      ------------------------------------------------------------------ */
   var AR = {
     'skip': 'انتقل إلى المحتوى',
-    'brand.home': 'DUOFUEL، العودة إلى الأعلى',
+    'brand.home': 'DUAL FUEL، العودة إلى الأعلى',
     'nav.label': 'التنقل الرئيسي',
     'nav.range': 'جيم أو لايف',
     'nav.day': 'يومك',
@@ -25,7 +25,7 @@
     'nav.dates': 'التمر',
     'nav.order': 'الأسعار',
     'cta.order': 'اطلب علبة',
-    'hero.title': 'DUOFUEL: طاقة قبل، وتعويض بعد',
+    'hero.title': 'DUAL FUEL: طاقة قبل، وتعويض بعد',
     'hero.pre1': 'طاقة',
     'hero.pre2': 'قبل.',
     'hero.post1': 'وتعويض',
@@ -50,10 +50,10 @@
     'cta.how': 'شوف كيف يمشي مع يومك',
 
     'range.title': 'علبتين لنوعين من الأيام',
-    'range.gymAlt': 'علبة DUOFUEL جيم بغلاف أسود في يد لابسة قفاز داخل نادي',
+    'range.gymAlt': 'علبة DUAL FUEL جيم بغلاف أسود في يد لابسة قفاز داخل نادي',
     'range.gymFor': 'لمن يرفع أوزان أو يركض أو يلعب بقوة ثلاث مرات أو أكثر في الأسبوع.',
-    'range.lifeAlt': 'علبة DUOFUEL: لوح PRE بالتمر والقهوة ولوح POST بالكاكاو والبروتين في غلاف واحد',
-    'range.gymAlt': 'علبة DUOFUEL: لوح PRE بالتمر والقهوة ولوح POST بالكاكاو والبروتين في غلاف واحد',
+    'range.lifeAlt': 'علبة DUAL FUEL: لوح PRE بالتمر والقهوة ولوح POST بالكاكاو والبروتين في غلاف واحد',
+    'range.gymAlt': 'علبة DUAL FUEL: لوح PRE بالتمر والقهوة ولوح POST بالكاكاو والبروتين في غلاف واحد',
     'range.lifeFor': 'للأيام المزحومة والمشي والحصص، لمن يحسب السعرات.',
     'range.pickGym': 'اختر جيم',
     'range.pickLife': 'اختر لايف',
@@ -121,7 +121,7 @@
     'batch.sample': 'استخدم الرمز التجريبي DF-2611-03',
 
     'order.title': 'اللحظتين بأقل من سعر لوحين',
-    'order.lead': 'لوح تمر ولوح بروتين، كل واحد بروحه، يكلفون حوالي 2.026 د.ك في رفوف الكويت. DUOFUEL يغطي اللحظتين بأقل.',
+    'order.lead': 'لوح تمر ولوح بروتين، كل واحد بروحه، يكلفون حوالي 2.026 د.ك في رفوف الكويت. DUAL FUEL يغطي اللحظتين بأقل.',
     'plan.gymNote': 'علبة واحدة، اللوحين',
     'plan.lifeNote': 'علبة أخف، اللوحين',
     'plan.gymWeek': 'باقة جيم الأسبوعية، شهرياً',
@@ -182,7 +182,7 @@
     'ff.nOut': 'اللوز',
     'ff.nIn': 'زبدة بذور دوار الشمس وبذور اليقطين',
     'ff.rule': 'ما نكتب «خالي من» على أي علبة إلا إذا انصنعت على خط إنتاج منفصل ونظيف، وكل دفعة نجحت في فحوصات المختبر للجلوتين والحليب والمكسرات.',
-    'faq.q6': 'عندي حساسية. أقدر آكل DUOFUEL؟',
+    'faq.q6': 'عندي حساسية. أقدر آكل DUAL FUEL؟',
     'faq.a6': 'مو الحين: العلبتين فيها حليب ولوز، ولوح PRE فيه كافيين، ومكتوب على الملصق. النسخ الخالية من الجلوتين واللاكتوز والمكسرات في خطة السنة الثانية والثالثة.',
     'nav.survey': 'الاستبيان',
     'survey.title': 'استبيان الألواح الصحية',
@@ -196,9 +196,9 @@
     'dates.p4t': 'يُخلط ويُكبس ويُغلّف عند مصنع أغذية مرخّص في الكويت. التمر كويتي، والأرز المنفوخ وبروتين مصل الحليب والقهوة والكاكاو مستوردة، فما نقول «كويتي 100%».',
     'faq.q8': 'فيه كافيين؟',
     'faq.a8': 'إي، من القهوة في لوح PRE: حوالي 60 ملغ في جيم وحوالي 35 ملغ في لايف، أقل من كوب قهوة عادي. مكتوب على الملصق، ومو مناسب للأطفال أو خلال الحمل. لوح POST ما فيه قهوة.',
-    'faq.q7': 'وين ينصنع DUOFUEL؟',
+    'faq.q7': 'وين ينصنع DUAL FUEL؟',
     'faq.a7': 'في الكويت، عند مصنع أغذية مرخّص يشتغل على وصفتنا. التمر من مزارع كويتية، والأرز المنفوخ وبروتين مصل الحليب والقهوة والكاكاو مستوردة.',
-    'foot.demo': 'DUOFUEL منتج تجريبي مصمم لمشروع تسويق جامعي، وغير معروض للبيع. الأسعار والدفعات والطلبات في هذي الصفحة للعرض فقط.',
+    'foot.demo': 'DUAL FUEL منتج تجريبي مصمم لمشروع تسويق جامعي، وغير معروض للبيع. الأسعار والدفعات والطلبات في هذي الصفحة للعرض فقط.',
     'foot.campaign': 'شوف حملة «لحظتين» التسويقية',
     'foot.credit': 'تصميم وتنفيذ',
     'badge.text': 'مشروع تجريبي من Q8Pixel',
@@ -213,7 +213,7 @@
       batchEmpty: 'Type a batch code first. It looks like DF-2611-03.',
       batchBad: function (c) { return 'There is no batch ' + c + '. Check the code next to the tear line; it looks like DF-2611-03.'; },
       done: function (q, p, t) { return 'Demo order placed: ' + q + ' × ' + p + ', total ' + t + '. Nothing was charged or sent.'; },
-      demo: 'Sample data: DUOFUEL is a concept, so this batch is invented.',
+      demo: 'Sample data: DUAL FUEL is a concept, so this batch is invented.',
       rows: ['Pack', 'Made', 'Dates from', 'Surplus dates in this batch', 'Packs in this batch', 'Packaging per pack', 'Two single bars would use']
     },
     ar: {
@@ -222,7 +222,7 @@
       batchEmpty: 'اكتب رمز الدفعة أول. شكله مثل DF-2611-03.',
       batchBad: function (c) { return 'ما في دفعة برمز ' + c + '. راجع الرمز جنب خط القطع؛ شكله مثل DF-2611-03.'; },
       done: function (q, p, t) { return 'انرسل طلب تجريبي: ' + q + ' × ' + p + '، المجموع ' + t + '. ما انخصم شي وما انرسل شي.'; },
-      demo: 'بيانات تجريبية: DUOFUEL منتج تجريبي، فهذي الدفعة متخيّلة.',
+      demo: 'بيانات تجريبية: DUAL FUEL منتج تجريبي، فهذي الدفعة متخيّلة.',
       rows: ['العلبة', 'تاريخ الإنتاج', 'مصدر التمر', 'التمر الفائض في الدفعة', 'عدد العلب في الدفعة', 'التغليف لكل علبة', 'لوحين منفصلين يحتاجون']
     }
   };
@@ -251,7 +251,7 @@
     var btn = $('[data-lang-toggle]');
     btn.textContent = l === 'ar' ? 'English' : 'عربي';
     btn.setAttribute('lang', l === 'ar' ? 'en' : 'ar');
-    doc.title = l === 'ar' ? 'DUOFUEL — طاقة قبل، وتعويض بعد · مشروع تجريبي من Q8Pixel' : 'DUOFUEL — Fuel before. Refuel after. · Concept by Q8Pixel';
+    doc.title = l === 'ar' ? 'DUAL FUEL — طاقة قبل، وتعويض بعد · مشروع تجريبي من Q8Pixel' : 'DUAL FUEL — Fuel before. Refuel after. · Concept by Q8Pixel';
     setTearLabel();
     updateTotal();
     if (lastBatch) showBatch(lastBatch);
@@ -311,8 +311,8 @@
      Batch lookup (demo data)
      ------------------------------------------------------------------ */
   var BATCHES = {
-    'DF-2611-03': { pack: 'DUOFUEL Gym', made: { en: '3 Nov 2026', ar: '3 نوفمبر 2026' }, from: { en: 'Surplus Khalas and Sukkari, Al-Wafra farms', ar: 'خلاص وسكري فائض، مزارع الوفرة' }, kg: '1,240 kg', packs: '31,000', pkg: '7.6 g', two: '9.8 g' },
-    'DF-2611-07': { pack: 'DUOFUEL Life', made: { en: '7 Nov 2026', ar: '7 نوفمبر 2026' }, from: { en: 'Surplus Khalas, Al-Abdali farms', ar: 'خلاص فائض، مزارع العبدلي' }, kg: '410 kg', packs: '18,500', pkg: '5.9 g', two: '8.1 g' }
+    'DF-2611-03': { pack: 'DUAL FUEL Gym', made: { en: '3 Nov 2026', ar: '3 نوفمبر 2026' }, from: { en: 'Surplus Khalas and Sukkari, Al-Wafra farms', ar: 'خلاص وسكري فائض، مزارع الوفرة' }, kg: '1,240 kg', packs: '31,000', pkg: '7.6 g', two: '9.8 g' },
+    'DF-2611-07': { pack: 'DUAL FUEL Life', made: { en: '7 Nov 2026', ar: '7 نوفمبر 2026' }, from: { en: 'Surplus Khalas, Al-Abdali farms', ar: 'خلاص فائض، مزارع العبدلي' }, kg: '410 kg', packs: '18,500', pkg: '5.9 g', two: '8.1 g' }
   };
   var batchForm = $('[data-batch]'), batchInput = $('#batch-code'), batchErr = $('#batch-error'), batchOut = $('[data-batch-result]');
   var lastBatch = null;
@@ -337,8 +337,8 @@
      ------------------------------------------------------------------ */
   var PRICES = { gym: 1.5, life: 1.25, gymWeek: 6.75, lifeWeek: 5.625 };
   var NAMES = {
-    en: { gym: 'DUOFUEL Gym', life: 'DUOFUEL Life', gymWeek: 'Gym Week Pack', lifeWeek: 'Life Week Pack' },
-    ar: { gym: 'DUOFUEL جيم', life: 'DUOFUEL لايف', gymWeek: 'باقة جيم الأسبوعية', lifeWeek: 'باقة لايف الأسبوعية' }
+    en: { gym: 'DUAL FUEL Gym', life: 'DUAL FUEL Life', gymWeek: 'Gym Week Pack', lifeWeek: 'Life Week Pack' },
+    ar: { gym: 'DUAL FUEL جيم', life: 'DUAL FUEL لايف', gymWeek: 'باقة جيم الأسبوعية', lifeWeek: 'باقة لايف الأسبوعية' }
   };
   var form = $('[data-order]'), qtyOut = $('[data-qty]'), totalOut = $('[data-total]'), done = $('[data-done]');
   var qty = 1, lastDone = null;
@@ -411,7 +411,7 @@
     if (!box || !FORM_URL) return;
     var f = doc.createElement('iframe');
     f.src = FORM_URL + (FORM_URL.indexOf('embedded=true') < 0 ? (FORM_URL.indexOf('?') < 0 ? '?' : '&') + 'embedded=true' : '');
-    f.title = 'DUOFUEL survey';
+    f.title = 'DUAL FUEL survey';
     f.loading = 'lazy';
     f.className = 'survey-iframe';
     var wait = $('[data-survey-wait]', box); if (wait) wait.hidden = true;
