@@ -192,6 +192,9 @@
     'survey.qrAlt': 'رمز QR يفتح هذا الاستبيان',
     'survey.qrCap': 'امسح الرمز وافتح الاستبيان من تلفونك، أو أرسله لربعك اللي يتمرنون.',
     'survey.wait': 'الاستبيان يفتح قريباً. امسح الرمز أو ارجع لنا بعد يوم.',
+    'results.title': 'نتائج الاستبيان مباشرة',
+    'results.lead': 'مجاميع بس، بدون أسماء. تتحدّث كل كم دقيقة. عيّنة متاحة من البالغين 18 سنة وأكثر في الكويت.',
+    'results.jump': 'شوف النتائج مباشرة',
     'foot.sign': 'مرحلتين. هدف واحد.',
     'made.kw': 'صُنع في الكويت، من تمر كويتي',
     'dates.p4': 'صُنع في الكويت',
@@ -233,6 +236,12 @@
   /* The survey is a Google Form. Paste its embed link here (the src="..." from Send → <> in Google Forms);
      until then the section shows a "opens soon" note. */
   var FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSf7wL15rMqIlyYaSFuC92vv39-qW91BKxfSuQhWiJV60y0jxw/viewform?embedded=true';
+
+  /* Live survey results: paste the Apps Script web-app link here (Deploy → Web app → the URL ending in /exec).
+     It returns anonymous totals only. While it is empty the #results section stays hidden and nothing is fetched.
+     TEST HOOK: window.DF_RESULTS_URL, when set before this file runs, is used instead of RESULTS_URL.
+     QA sets it with Playwright's page.addInitScript(() => { window.DF_RESULTS_URL = '...' }); the live site never sets it. */
+  var RESULTS_URL = '';
   var t = function () { return T[lang]; };
 
   function applyLang(l) {
@@ -418,6 +427,313 @@
     f.className = 'survey-iframe';
     var wait = $('[data-survey-wait]', box); if (wait) wait.hidden = true;
     box.appendChild(f);
+  })();
+
+  /* ------------------------------------------------------------------
+     Live survey results: anonymous totals from the Apps Script web app.
+     Every value from the JSON reaches the page through textContent only.
+     ------------------------------------------------------------------ */
+  (function () {
+    var sec = $('[data-results]');
+    var src = typeof window.DF_RESULTS_URL === 'string' && window.DF_RESULTS_URL ? window.DF_RESULTS_URL : RESULTS_URL;
+    src = String(src || '').trim();
+    if (!/^https:\/\/[^\s"'<>]+$/i.test(src) && !/^http:\/\/(localhost|127\.0\.0\.1)(:\d+)?\/[^\s"'<>]*$/i.test(src)) src = '';
+    if (!sec || !src) return; // no link yet: the section stays hidden and nothing is fetched
+
+    var RT = {
+      en: {
+        loading: 'Loading the latest totals…',
+        error: 'Results are not available right now.',
+        wait: 'Results appear after {min} responses. So far: {n}.',
+        people: 'respondents aged 18+',
+        updated: 'Updated {t}',
+        now: 'just now',
+        mins: function (m) { return m + ' min ago'; },
+        hrs: function (h) { return h + ' h ago'; },
+        span: 'responses {a} – {b}',
+        spanOne: 'responses on {a}',
+        of: '{c} of {a}',
+        answered: '{a} answered',
+        q: 'Q{n}',
+        k1: 'find the two-bar pack appealing',
+        k2: 'would likely try it',
+        k3: 'would pay {p} or more',
+        k3note: 'Our prices: Life {l}, Gym {g}',
+        k4: 'say surplus dates make it more attractive (yes or maybe)',
+        key: 'Orange bars below are the answers counted in these four figures. Percentages are of the people who answered each question.',
+        more: 'Show all questions',
+        less: 'Show fewer questions',
+        kwd: function (s) { return 'KWD ' + s; },
+        locale: 'en-GB'
+      },
+      ar: {
+        loading: 'جاري تحميل آخر الأرقام…',
+        error: 'النتائج مو متوفرة الحين.',
+        wait: 'النتائج تطلع بعد ما توصل الردود {min}. لين الحين: {n}.',
+        people: 'مشارك عمرهم 18 سنة أو أكثر',
+        updated: 'آخر تحديث {t}',
+        now: 'قبل شوي',
+        mins: function (m) { return 'قبل ' + arCount(m, 'دقيقة', 'دقيقتين', 'دقايق', 'دقيقة'); },
+        hrs: function (h) { return 'قبل ' + arCount(h, 'ساعة', 'ساعتين', 'ساعات', 'ساعة'); },
+        span: 'الردود من {a} إلى {b}',
+        spanOne: 'الردود يوم {a}',
+        of: '{c} من {a}',
+        answered: 'عدد اللي جاوبوا: {a}',
+        q: 'س{n}',
+        k1: 'تعجبهم فكرة العلبة باللوحين',
+        k2: 'غالباً بيجربونها',
+        k3: 'يدفعون {p} أو أكثر',
+        k3note: 'أسعارنا: لايف {l}، جيم {g}',
+        k4: 'التمر الفائض يخليها أجذب لهم (نعم أو يمكن)',
+        key: 'الأعمدة البرتقالية تحت هي الإجابات المحسوبة في هالأرقام الأربعة. النسب من عدد اللي جاوبوا على كل سؤال.',
+        more: 'اعرض كل الأسئلة',
+        less: 'اعرض أسئلة أقل',
+        kwd: function (s) { return s + ' د.ك'; },
+        locale: 'ar-KW-u-nu-latn'
+      }
+    };
+    function arCount(n, one, two, few, many) { return n === 1 ? one : n === 2 ? two : n + ' ' + (n <= 10 ? few : many); }
+
+    // the four headline figures: which question and which choices (0-based, in form order) they add up
+    var KPIS = [
+      { q: 8, idx: [0, 1], label: 'k1' },   // very + somewhat appealing
+      { q: 13, idx: [0, 1], label: 'k2' },  // very + somewhat likely to try
+      { q: 10, idx: [3, 4, 5], label: 'k3', note: true }, // KWD 1.250–1.499, 1.500–1.999, 2.000+
+      { q: 12, idx: [0, 1], label: 'k4' }   // yes + maybe
+    ];
+    var KEY = {}; KPIS.forEach(function (k) { KEY[k.q] = k.idx; });
+    var MAIN = [8, 13, 10, 12, 6, 4, 9], MORE = [1, 2, 3, 5, 7, 11];
+
+    var statusEl = $('[data-results-status]', sec), bodyEl = $('[data-results-body]', sec);
+    var state = 'loading', data = null, moreOpen = false;
+
+    /* ---- defensive reading of the JSON: known fields only, numbers clamped, strings trimmed ---- */
+    function int(v, max) { v = Math.floor(Number(v)); return isFinite(v) ? Math.min(Math.max(v, 0), max) : 0; }
+    function str(v, max) { return typeof v === 'string' ? v.replace(/[\u0000-\u001f\u007f]+/g, ' ').trim().slice(0, max) : ''; }
+    function when(v) { if (typeof v !== 'string' || v.length > 40) return null; var d = new Date(v); return isNaN(d.getTime()) ? null : d; }
+    function clean(raw) {
+      if (!raw || typeof raw !== 'object' || raw.ok !== true) return null;
+      var n = int(raw.n, 1e6), minN = int(raw.min_n, 1e6);
+      var out = { n: n, minN: minN, hidden: raw.hidden === true || n < minN, updated: when(raw.updated), first: when(raw.first), last: when(raw.last), q: {}, nums: [] };
+      if (out.hidden || !Array.isArray(raw.questions)) return out;
+      raw.questions.slice(0, 40).forEach(function (q) {
+        if (!q || typeof q !== 'object') return;
+        var num = int(q.num, 99);
+        if (!num || out.q[num]) return;
+        var answered = int(q.answered, 1e6);
+        var choices = (Array.isArray(q.choices) ? q.choices.slice(0, 24) : []).map(function (c) {
+          c = c && typeof c === 'object' ? c : {};
+          var en = str(c.en, 160), ar = str(c.ar, 160);
+          return { en: en || ar, ar: ar || en, count: Math.min(int(c.count, 1e6), answered) };
+        }).filter(function (c) { return c.en; });
+        out.q[num] = { num: num, en: str(q.title_en, 400), ar: str(q.title_ar, 400), answered: answered, choices: choices };
+        out.nums.push(num);
+      });
+      return out;
+    }
+    function pct(c, a) { return a > 0 ? Math.min(100, Math.max(0, Math.round(100 * c / a))) : 0; }
+    function share(num, idx) {
+      var q = data.q[num];
+      if (!q || !q.answered) return null;
+      var c = 0;
+      idx.forEach(function (i) { if (q.choices[i]) c += q.choices[i].count; });
+      c = Math.min(c, q.answered);
+      return { c: c, a: q.answered, p: pct(c, q.answered) };
+    }
+
+    /* ---- DOM helpers (createElement + textContent only) ---- */
+    function mk(tag, cls, text) { var e = doc.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = String(text); return e; }
+    // "{key}" in a template becomes a <bdi>, so numbers, prices and dates stay readable inside Arabic text
+    function fill(el, tpl, vals) {
+      tpl.split(/(\{\w+\})/).forEach(function (part) {
+        var m = /^\{(\w+)\}$/.exec(part);
+        if (m && Object.prototype.hasOwnProperty.call(vals, m[1])) el.appendChild(mk('bdi', null, vals[m[1]]));
+        else if (part) el.appendChild(doc.createTextNode(part));
+      });
+      return el;
+    }
+    function dirOf(s) { return /[؀-ۿ]/.test(s) ? 'rtl' : 'ltr'; }
+    function fmtDate(d, withYear) {
+      var o = { day: 'numeric', month: 'short', timeZone: 'Asia/Kuwait' };
+      if (withYear) o.year = 'numeric';
+      // non-breaking spaces so a date never splits across lines on phones
+      try { return new Intl.DateTimeFormat(RT[lang].locale, o).format(d).replace(/ /g, ' '); } catch (e) { return d.toISOString().slice(0, 10); }
+    }
+    function kwDay(d) { return fmtDate(d, true); }
+    function ago(d) {
+      var L = RT[lang], s = (Date.now() - d.getTime()) / 1000;
+      if (s < 60) return L.now;
+      if (s < 3600) return L.mins(Math.floor(s / 60));
+      if (s < 86400) return L.hrs(Math.floor(s / 3600));
+      return kwDay(d);
+    }
+
+    function writeUpdated(el) {
+      var L = RT[lang];
+      el.textContent = '';
+      if (data.updated) {
+        el.appendChild(mk('span', 'res-live')).setAttribute('aria-hidden', 'true');
+        fill(el, L.updated, { t: ago(data.updated) });
+      }
+      if (data.first && data.last) {
+        if (data.updated) el.appendChild(doc.createTextNode(' · '));
+        if (kwDay(data.first) === kwDay(data.last)) fill(el, L.spanOne, { a: kwDay(data.last) });
+        else fill(el, L.span, { a: fmtDate(data.first, data.first.getUTCFullYear() !== data.last.getUTCFullYear()), b: kwDay(data.last) });
+      }
+    }
+
+    function card(num) {
+      var q = data.q[num], L = RT[lang];
+      if (!q || !q.choices.length) return null;
+      var art = mk('article', 'res-q'), head = mk('div', 'res-qhead');
+      head.appendChild(mk('span', 'res-qnum', L.q.replace('{n}', num)));
+      head.appendChild(mk('h3', null, (lang === 'ar' ? q.ar || q.en : q.en || q.ar) || L.q.replace('{n}', num)));
+      art.appendChild(head);
+      var list = mk('ul', 'res-bars'), key = KEY[num] || [];
+      q.choices.forEach(function (c, i) {
+        var p = pct(c.count, q.answered), text = lang === 'ar' ? c.ar : c.en;
+        var li = mk('li', 'rb-row' + (key.indexOf(i) >= 0 ? ' is-key' : ''));
+        var top = mk('div', 'rb-head'), label = mk('bdi', 'rb-label', text), val = mk('span', 'rb-val');
+        label.dir = dirOf(text);
+        val.appendChild(mk('bdi', 'rb-pct', p + '%'));
+        val.appendChild(mk('bdi', 'rb-n', '(' + c.count + ')'));
+        top.appendChild(label); top.appendChild(val);
+        var track = mk('div', 'rb-track'), bar = mk('div', 'rb-fill');
+        track.setAttribute('aria-hidden', 'true');
+        bar.style.setProperty('--w', p + '%');
+        track.appendChild(bar);
+        li.appendChild(top); li.appendChild(track);
+        list.appendChild(li);
+      });
+      art.appendChild(list);
+      art.appendChild(fill(mk('p', 'res-ans'), L.answered, { a: q.answered }));
+      return art;
+    }
+
+    function grid(nums, id) {
+      var g = mk('div', 'res-grid');
+      if (id) g.id = id;
+      nums.forEach(function (n) { var c = card(n); if (c) g.appendChild(c); });
+      return g.childNodes.length ? g : null;
+    }
+
+    function render() {
+      var L = RT[lang];
+      statusEl.textContent = ''; bodyEl.textContent = '';
+      statusEl.className = 'results-status';
+      statusEl.hidden = false;
+      sec.setAttribute('aria-busy', state === 'loading' ? 'true' : 'false');
+      if (state === 'loading') { statusEl.textContent = L.loading; return; }
+      if (state === 'error') { statusEl.textContent = L.error; statusEl.classList.add('is-error'); return; }
+      if (data.hidden) { fill(statusEl, L.wait, { min: data.minN, n: data.n }); statusEl.classList.add('is-wait'); return; }
+      statusEl.hidden = true;
+
+      var meta = mk('div', 'res-meta'), count = mk('p', 'res-count');
+      count.appendChild(mk('bdi', 'res-n', data.n));
+      count.appendChild(mk('span', null, L.people));
+      meta.appendChild(count);
+      var upd = mk('p', 'res-updated');
+      upd.setAttribute('data-results-updated', '');
+      writeUpdated(upd);
+      meta.appendChild(upd);
+      bodyEl.appendChild(meta);
+
+      var kpis = mk('ul', 'res-kpis');
+      KPIS.forEach(function (k) {
+        var s = share(k.q, k.idx), li = mk('li', 'res-kpi');
+        li.appendChild(mk('bdi', 'kpi-val', s ? s.p + '%' : '–'));
+        li.appendChild(fill(mk('p', 'kpi-label'), L[k.label], { p: L.kwd('1.250') }));
+        if (k.note) li.appendChild(fill(mk('p', 'kpi-note'), L.k3note, { l: L.kwd('1.250'), g: L.kwd('1.500') }));
+        var sub = mk('p', 'kpi-sub');
+        if (s) { fill(sub, L.of, { c: s.c, a: s.a }); sub.appendChild(doc.createTextNode(' · ')); }
+        sub.appendChild(mk('bdi', null, L.q.replace('{n}', k.q)));
+        li.appendChild(sub);
+        kpis.appendChild(li);
+      });
+      bodyEl.appendChild(kpis);
+      bodyEl.appendChild(mk('p', 'fine res-key', L.key));
+
+      var main = grid(MAIN);
+      if (main) bodyEl.appendChild(main);
+      var rest = MORE.concat(data.nums.filter(function (n) { return MAIN.indexOf(n) < 0 && MORE.indexOf(n) < 0; }));
+      var extra = grid(rest, 'res-more');
+      if (extra) {
+        var btn = mk('button', 'btn btn-line res-toggle', moreOpen ? L.less : L.more);
+        btn.type = 'button';
+        btn.setAttribute('aria-controls', 'res-more');
+        btn.setAttribute('aria-expanded', moreOpen ? 'true' : 'false');
+        extra.hidden = !moreOpen;
+        btn.addEventListener('click', function () {
+          moreOpen = !moreOpen;
+          extra.hidden = !moreOpen;
+          btn.textContent = moreOpen ? RT[lang].less : RT[lang].more;
+          btn.setAttribute('aria-expanded', moreOpen ? 'true' : 'false');
+        });
+        bodyEl.appendChild(btn);
+        bodyEl.appendChild(extra);
+      }
+    }
+
+    /* ---- loading: fetch first (Apps Script allows CORS after its redirect), JSONP if that fails ---- */
+    function getJSON(url) {
+      return new Promise(function (resolve, reject) {
+        if (!window.fetch) { reject(new Error('no fetch')); return; }
+        var ctl = window.AbortController ? new AbortController() : null;
+        var timer = setTimeout(function () { if (ctl) ctl.abort(); reject(new Error('timeout')); }, 10000);
+        fetch(url, ctl ? { signal: ctl.signal } : {}).then(function (r) {
+          if (!r.ok) throw new Error('HTTP ' + r.status);
+          return r.json();
+        }).then(function (j) { clearTimeout(timer); resolve(j); }, function (e) { clearTimeout(timer); reject(e); });
+      });
+    }
+    var jsonpSeq = 0;
+    function getJSONP(url) {
+      return new Promise(function (resolve, reject) {
+        var name = 'dfResults_' + Date.now().toString(36) + '_' + (jsonpSeq++), s = doc.createElement('script'), settled = false, timer;
+        function finish(err, val) {
+          if (settled) return;
+          settled = true;
+          clearTimeout(timer);
+          window[name] = function () {}; // a late reply must not throw
+          setTimeout(function () { try { delete window[name]; } catch (e) { window[name] = undefined; } }, 30000);
+          if (s.parentNode) s.parentNode.removeChild(s);
+          if (err) reject(err); else resolve(val);
+        }
+        window[name] = function (j) { finish(null, j); };
+        s.onerror = function () { finish(new Error('jsonp failed')); };
+        s.onload = function () { finish(new Error('no callback')); }; // runs after the script, so only when it never called back
+        timer = setTimeout(function () { finish(new Error('timeout')); }, 10000);
+        s.async = true;
+        s.src = url + (url.indexOf('?') < 0 ? '?' : '&') + 'callback=' + name;
+        doc.head.appendChild(s);
+      });
+    }
+    function load(isRefresh) {
+      getJSON(src).then(null, function () { return getJSONP(src); }).then(function (raw) {
+        var d = clean(raw);
+        if (!d) throw new Error('bad data');
+        data = d; state = 'ready'; render();
+      }).catch(function () {
+        if (!isRefresh || !data) { state = 'error'; render(); } // a failed refresh keeps the last good totals
+      });
+    }
+
+    sec.hidden = false;
+    var jump = $('[data-results-link]'); if (jump) jump.hidden = false;
+    // bars grow in when the section first scrolls into view
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (es) {
+        if (es.some(function (e) { return e.isIntersecting; })) { sec.classList.add('is-shown'); io.disconnect(); }
+      }, { rootMargin: '0px 0px -10% 0px' });
+      io.observe(sec);
+    } else sec.classList.add('is-shown');
+
+    var prevApply = applyLang;
+    applyLang = function (l) { prevApply(l); render(); }; // labels switch language without a refetch
+    render();
+    load(false);
+    setInterval(function () { if (!doc.hidden) load(true); }, 5 * 60 * 1000);
+    setInterval(function () { var u = $('[data-results-updated]', sec); if (u && data && state === 'ready') writeUpdated(u); }, 60 * 1000);
   })();
 
   setVariant(variant);

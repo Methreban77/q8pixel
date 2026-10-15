@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Noto+Kufi+Arabic:wght@400..900&display=swap">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=20261015">
   <script>
     (function () {
       var l = 'en', d = document.documentElement;
@@ -26,7 +26,7 @@
       setTimeout(function () { d.classList.remove('i18n-pending'); }, 1500);
     })();
   </script>
-  <script src="app.js" defer></script>
+  <script src="app.js?v=20261015" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
@@ -372,10 +372,21 @@
             <img src="img/survey-qr.svg" width="180" height="180" alt="QR code that opens this survey" data-i18n-attr="alt:survey.qrAlt">
             <figcaption data-i18n="survey.qrCap">Scan to open the survey on your phone, or share it with a friend who trains.</figcaption>
           </figure>
+          <p class="survey-results-link" data-results-link hidden><a class="btn btn-line btn-sm" href="#results" data-i18n="results.jump">See the live results</a></p>
         </div>
         <div class="survey-frame" data-survey>
           <p class="survey-wait" data-survey-wait data-i18n="survey.wait">The survey opens soon. Scan the code or check back in a day.</p>
         </div>
+      </div>
+    </section>
+
+    <!-- ============ LIVE SURVEY RESULTS (stays hidden until RESULTS_URL is set in app.js) ============ -->
+    <section class="results" id="results" aria-labelledby="results-title" data-results hidden>
+      <div class="wrap">
+        <h2 id="results-title" class="h2" data-i18n="results.title">Live survey results</h2>
+        <p class="lead" data-i18n="results.lead">Anonymous totals only. Updates every few minutes. Convenience sample of adults 18+ in Kuwait.</p>
+        <p class="results-status" data-results-status role="status"></p>
+        <div class="results-body" data-results-body></div>
       </div>
     </section>
 
