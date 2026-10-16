@@ -45,8 +45,8 @@
     'pack.tearOpen': 'افتح العلبة',
     'pack.tearClose': 'أغلق العلبة',
     'hero.lede': 'غلاف واحد ولوحين مغلّقين. كُل البرتقالي قبل، وخلّ الأزرق لبعد.',
-    'cta.orderGym': 'اطلب جيم · 1.500 د.ك',
-    'cta.orderLife': 'اطلب لايف · 1.250 د.ك',
+    'cta.orderGym': 'اطلب جيم · 1.750 د.ك',
+    'cta.orderLife': 'اطلب لايف · 1.500 د.ك',
     'cta.how': 'شوف كيف يمشي مع يومك',
 
     'range.title': 'علبتين لنوعين من الأيام',
@@ -346,7 +346,7 @@
   /* ------------------------------------------------------------------
      Demo order
      ------------------------------------------------------------------ */
-  var PRICES = { gym: 1.5, life: 1.25, gymWeek: 6.75, lifeWeek: 5.625 };
+  var PRICES = { gym: 1.75, life: 1.5, gymWeek: 7.875, lifeWeek: 6.75 };
   var NAMES = {
     en: { gym: 'DUAL FUEL Gym', life: 'DUAL FUEL Life', gymWeek: 'Gym Week Pack', lifeWeek: 'Life Week Pack' },
     ar: { gym: 'DUAL FUEL جيم', life: 'DUAL FUEL لايف', gymWeek: 'باقة جيم الأسبوعية', lifeWeek: 'باقة لايف الأسبوعية' }
@@ -498,7 +498,7 @@
     var KPIS = [
       { q: 8, idx: [0, 1], label: 'k1' },   // very + somewhat appealing
       { q: 13, idx: [0, 1], label: 'k2' },  // very + somewhat likely to try
-      { q: 10, idx: [3, 4, 5], label: 'k3', note: true }, // KWD 1.250–1.499, 1.500–1.999, 2.000+
+      { q: 10, idx: [4, 5], label: 'k3', note: true }, // KWD 1.500–1.999, 2.000+ (Life is 1.500)
       { q: 12, idx: [0, 1], label: 'k4' }   // yes + maybe
     ];
     var KEY = {}; KPIS.forEach(function (k) { KEY[k.q] = k.idx; });
@@ -642,8 +642,8 @@
       KPIS.forEach(function (k) {
         var s = share(k.q, k.idx), li = mk('li', 'res-kpi');
         li.appendChild(mk('bdi', 'kpi-val', s ? s.p + '%' : '–'));
-        li.appendChild(fill(mk('p', 'kpi-label'), L[k.label], { p: L.kwd('1.250') }));
-        if (k.note) li.appendChild(fill(mk('p', 'kpi-note'), L.k3note, { l: L.kwd('1.250'), g: L.kwd('1.500') }));
+        li.appendChild(fill(mk('p', 'kpi-label'), L[k.label], { p: L.kwd('1.500') }));
+        if (k.note) li.appendChild(fill(mk('p', 'kpi-note'), L.k3note, { l: L.kwd('1.500'), g: L.kwd('1.750') }));
         var sub = mk('p', 'kpi-sub');
         if (s) { fill(sub, L.of, { c: s.c, a: s.a }); sub.appendChild(doc.createTextNode(' · ')); }
         sub.appendChild(mk('bdi', null, L.q.replace('{n}', k.q)));
