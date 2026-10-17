@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Noto+Kufi+Arabic:wght@400..900&display=swap">
-  <link rel="stylesheet" href="styles.css?v=20261017">
+  <link rel="stylesheet" href="styles.css?v=20261017b">
   <script>
     (function () {
       var l = 'en', d = document.documentElement;
@@ -26,7 +26,7 @@
       setTimeout(function () { d.classList.remove('i18n-pending'); }, 1500);
     })();
   </script>
-  <script src="app.js?v=20261017" defer></script>
+  <script src="app.js?v=20261017b" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
@@ -92,8 +92,8 @@
         </div>
 
         <div class="variant-switch" role="radiogroup" aria-label="Choose a pack" data-i18n-attr="aria-label:var.label">
-          <label><input type="radio" name="variant" value="gym" checked><span><strong>DUAL FUEL Gym</strong><small data-i18n="var.gymSub">for hard training</small></span></label>
-          <label><input type="radio" name="variant" value="life"><span><strong>DUAL FUEL Life</strong><small data-i18n="var.lifeSub">for a lighter day</small></span></label>
+          <label><input type="radio" name="variant" value="gym"><span><strong>DUAL FUEL Gym</strong><small data-i18n="var.gymSub">future product</small></span></label>
+          <label><input type="radio" name="variant" value="life" checked><span><strong>DUAL FUEL Life</strong><small data-i18n="var.lifeSub">for a lighter day</small></span></label>
         </div>
 
         <!-- the pack: one wrapper, two halves, a tear line -->
@@ -125,7 +125,7 @@
           <p class="made-kw"><span class="kw-flag" aria-hidden="true"><i></i><i></i><i></i></span><span data-i18n="made.kw">Made in Kuwait, with Kuwaiti dates</span></p>
           <p class="hero-lede" data-i18n="hero.lede">One wrapper, two sealed bars. Eat the orange one before and keep the blue one for after.</p>
           <div class="hero-actions">
-            <a class="btn btn-ink" href="#order"><span class="v-gym" data-i18n="cta.orderGym">Order Gym · KWD 1.750</span><span class="v-life" data-i18n="cta.orderLife">Order Life · KWD 1.500</span></a>
+            <a class="btn btn-ink" href="#order"><span class="v-gym" data-i18n="cta.orderGym">Gym comes next · order Life now</span><span class="v-life" data-i18n="cta.orderLife">Order Life · KWD 1.500</span></a>
             <a class="btn btn-line" href="#day" data-i18n="cta.how">See how it fits your day</a>
           </div>
         </div>
@@ -138,6 +138,7 @@
         <h2 id="range-title" class="h2" data-i18n="range.title">Two packs for two kinds of day</h2>
         <div class="range-grid">
           <article class="range-item range-gym">
+            <span class="ribbon" data-i18n="range.future">Future product</span>
             <img src="img/pack-gym-wide.jpg?v=20261017" width="1440" height="527" loading="lazy" alt="DUAL FUEL Gym pack: black wrapper with a PRE energy bar and a POST protein and creatine bar, held at the gym" data-i18n-attr="alt:range.gymAlt">
             <div class="range-body">
               <h3>DUAL FUEL Gym</h3>
@@ -149,10 +150,11 @@
                 <div><dt data-i18n="f.creatine">Creatine monohydrate</dt><dd>3 g</dd></div>
               </dl>
               <p class="range-price">KWD 1.750</p>
-              <button class="btn btn-ink" type="button" data-pick="gym" data-i18n="range.pickGym">Choose Gym</button>
+              <button class="btn btn-ink" type="button" data-pick="gym" data-i18n="range.pickGym" disabled>Coming next</button>
             </div>
           </article>
           <article class="range-item range-life">
+            <span class="ribbon ribbon-launch" data-i18n="range.launch">Launch product</span>
             <img src="img/pack-2togo.jpg?v=20261017" width="1440" height="527" loading="lazy" alt="DUAL FUEL pack: PRE Coffee Date Crunch and POST Cocoa Protein Crunch in one wrapper, beside dates, puffed rice, coffee beans, almonds and chocolate" data-i18n-attr="alt:range.lifeAlt">
             <div class="range-body">
               <h3>DUAL FUEL Life</h3>
@@ -277,9 +279,9 @@
           <h2 id="order-title" class="h2" data-i18n="order.title">Both moments for less than two bars</h2>
           <p class="lead" data-i18n="order.lead">A date bar and a protein bar bought separately cost about KWD 2.026 on Kuwaiti shelves. DUAL FUEL covers both moments for less.</p>
           <ul class="price-list">
-            <li><span class="pl-name">DUAL FUEL Gym</span><span class="pl-note" data-i18n="plan.gymNote">One pack, both bars</span><span class="pl-price">KWD 1.750</span></li>
+            <li><span class="pl-name">DUAL FUEL Gym</span><span class="pl-note" data-i18n="plan.gymNote">Future product · one pack, both bars</span><span class="pl-price">KWD 1.750</span></li>
             <li><span class="pl-name">DUAL FUEL Life</span><span class="pl-note" data-i18n="plan.lifeNote">One lighter pack, both bars</span><span class="pl-price">KWD 1.500</span></li>
-            <li><span class="pl-name" data-i18n="plan.gymWeek">Gym Week Pack, monthly</span><span class="pl-note" data-i18n="plan.weekNote">5 packs every month · save 10%</span><span class="pl-price">KWD 7.875</span></li>
+            <li><span class="pl-name" data-i18n="plan.gymWeek">Gym Week Pack, monthly</span><span class="pl-note" data-i18n="plan.gymWeekNote">Future product · 5 packs every month · save 10%</span><span class="pl-price">KWD 7.875</span></li>
             <li><span class="pl-name" data-i18n="plan.lifeWeek">Life Week Pack, monthly</span><span class="pl-note" data-i18n="plan.weekNote">5 packs every month · save 10%</span><span class="pl-price">KWD 6.750</span></li>
           </ul>
         </div>
@@ -288,9 +290,9 @@
           <h3 id="form-title" data-i18n="form.title">Order</h3>
           <fieldset>
             <legend data-i18n="form.plan">Choose</legend>
-            <label class="choice"><input type="radio" name="plan" value="gym" checked> <span>DUAL FUEL Gym</span> <bdi class="choice-price">KWD 1.750</bdi></label>
-            <label class="choice"><input type="radio" name="plan" value="life"> <span>DUAL FUEL Life</span> <bdi class="choice-price">KWD 1.500</bdi></label>
-            <label class="choice"><input type="radio" name="plan" value="gymWeek"> <span data-i18n="plan.gymWeek">Gym Week Pack, monthly</span> <bdi class="choice-price">KWD 7.875</bdi></label>
+            <label class="choice choice-soon"><input type="radio" name="plan" value="gym" disabled> <span>DUAL FUEL Gym <small data-i18n="range.future">Future product</small></span> <bdi class="choice-price">KWD 1.750</bdi></label>
+            <label class="choice"><input type="radio" name="plan" value="life" checked> <span>DUAL FUEL Life</span> <bdi class="choice-price">KWD 1.500</bdi></label>
+            <label class="choice choice-soon"><input type="radio" name="plan" value="gymWeek" disabled> <span><span data-i18n="plan.gymWeek">Gym Week Pack, monthly</span> <small data-i18n="range.future">Future product</small></span> <bdi class="choice-price">KWD 7.875</bdi></label>
             <label class="choice"><input type="radio" name="plan" value="lifeWeek"> <span data-i18n="plan.lifeWeek">Life Week Pack, monthly</span> <bdi class="choice-price">KWD 6.750</bdi></label>
           </fieldset>
           <div class="qty-row">
@@ -307,7 +309,7 @@
             <option value="coop" data-i18n="form.optCoop">Pick up at my co-op</option>
             <option value="home" data-i18n="form.optHome">Delivery in Kuwait (+ KWD 0.500)</option>
           </select>
-          <p class="total"><span data-i18n="form.total">Total</span> <bdi data-total>KWD 1.750</bdi></p>
+          <p class="total"><span data-i18n="form.total">Total</span> <bdi data-total>KWD 1.500</bdi></p>
           <button class="btn btn-pre btn-wide" type="submit" data-i18n="form.submit">Place demo order</button>
           <p class="fine" data-i18n="form.fine">Demo only: nothing is charged or sent anywhere.</p>
           <div class="order-done" data-done hidden tabindex="-1">
@@ -326,7 +328,7 @@
         <ul class="where-list">
           <li><svg class="icon" aria-hidden="true"><use href="#i-gym"/></svg><h3 data-i18n="where.gym">Gym front desks</h3><p data-i18n="where.gymT">On the counter where you check in, so PRE is in your hand before you warm up.</p></li>
           <li><svg class="icon" aria-hidden="true"><use href="#i-store"/></svg><h3 data-i18n="where.coop">Co-op supermarkets and pharmacies</h3><p data-i18n="where.coopT">In the sports-nutrition aisle of your area's co-operative society.</p></li>
-          <li><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg><h3 data-i18n="where.app">Delivery apps</h3><p data-i18n="where.appT">Order singles or your Gym Week Pack and get them the same day.</p></li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg><h3 data-i18n="where.app">Delivery apps</h3><p data-i18n="where.appT">Order singles or your Week Pack and get them the same day.</p></li>
           <li><svg class="icon" aria-hidden="true"><use href="#i-campus"/></svg><h3 data-i18n="where.campus">University campuses</h3><p data-i18n="where.campusT">Campus stores and sports clubs, with student team ambassadors.</p></li>
         </ul>
       </div>
@@ -402,6 +404,7 @@
           <details><summary data-i18n="faq.q6">I have an allergy. Can I eat DUAL FUEL?</summary><p data-i18n="faq.a6">Not yet: both packs contain milk and almonds, and PRE contains caffeine; the label says so. Gluten-free, lactose-free and nut-free versions are planned for year 2–3.</p></details>
           <details><summary data-i18n="faq.q7">Where is DUAL FUEL made?</summary><p data-i18n="faq.a7">In Kuwait, by a licensed food manufacturer working to our recipe. The dates come from Kuwaiti farms; the puffed rice, whey protein, coffee and cocoa are imported.</p></details>
           <details><summary data-i18n="faq.q8">Is there caffeine?</summary><p data-i18n="faq.a8">Yes, from coffee in the PRE bar: about 60 mg in Gym and about 35 mg in Life, less than a typical cup of coffee. It is declared on the label; not for children or during pregnancy. POST has no coffee.</p></details>
+          <details><summary data-i18n="faq.q9">When does the Gym pack launch?</summary><p data-i18n="faq.a9">Gym is our future product. We launch with Life to prove repeat purchase and keep the cold chain simple; the full-portion Gym pack with creatine follows once Life proves repeat purchase and the creatine formulation passes testing.</p></details>
           <details><summary data-i18n="faq.q5">Are surplus dates lower quality?</summary><p data-i18n="faq.a5">Only in looks. They pass the same food-safety tests as any date we use; they were just too small or marked for the fruit shelf.</p></details>
         </div>
       </div>

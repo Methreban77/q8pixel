@@ -496,3 +496,10 @@ html[lang="ar"] .res-qnum { font-family: var(--f-ar); font-weight: 800; font-siz
 .res-toggle { margin-top: 22px; background: transparent; }
 @media (min-width: 860px) { .res-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; } }
 @media print { .results .rb-fill { width: var(--w, 0%); transition: none; } }
+
+/* future / launch product tags */
+.range-item { position: relative; }
+.range-item .ribbon { position: absolute; top: 14px; inset-inline-start: 14px; z-index: 2; background: #17171a; color: #fff; font-weight: 800; font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; padding: .35rem .7rem; border-radius: 999px; }
+.range-item .ribbon-launch { background: #2f7d4f; }
+.choice-soon { opacity: .55; }
+.choice small, .variant-switch small { font-weight: 600; }
