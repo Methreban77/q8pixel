@@ -25,11 +25,11 @@
     'nav.dates': 'التمر',
     'nav.order': 'الأسعار',
     'cta.order': 'اطلب علبة',
-    'hero.title': 'DUAL FUEL: من نخيل الكويت إلى تمرينك. خذ واحداً واكسب اثنين.',
-    'hero.pre1': 'خذ',
-    'hero.pre2': 'واحد.',
-    'hero.post1': 'واكسب',
-    'hero.post2': 'اثنين.',
+    'hero.title': 'DUAL FUEL: طاقة قبل، وتعويض بعد. علبة واحدة، فائدتان.',
+    'hero.pre1': 'طاقة',
+    'hero.pre2': 'قبل.',
+    'hero.post1': 'وتعويض',
+    'hero.post2': 'بعد.',
     'hero.preNoteLife': 'لوح خفيف مقرمش بالتمر والقهوة قبل المشي أو الحصة أو عصرية طويلة.',
     'hero.postNoteLife': '11 غ بروتين و3 غ كرياتين، بحوالي 114 سعرة.',
     'var.label': 'اختر العلبة',
@@ -243,7 +243,7 @@
     var btn = $('[data-lang-toggle]');
     btn.textContent = l === 'ar' ? 'English' : 'عربي';
     btn.setAttribute('lang', l === 'ar' ? 'en' : 'ar');
-    doc.title = l === 'ar' ? 'DUAL FUEL — من نخيل الكويت إلى تمرينك. خذ واحداً واكسب اثنين · مشروع تجريبي من Q8Pixel' : 'DUAL FUEL — From Kuwaiti palms to your workout. Take one, gain two. · Concept by Q8Pixel';
+    doc.title = l === 'ar' ? 'DUAL FUEL — طاقة قبل، وتعويض بعد · مشروع تجريبي من Q8Pixel' : 'DUAL FUEL — Fuel before. Refuel after. · Concept by Q8Pixel';
     setTearLabel();
     updateTotal();
     if (lastBatch) showBatch(lastBatch);
